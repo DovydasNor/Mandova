@@ -1,4 +1,4 @@
-import mandovaLogo from '../assets/mandova_logo_trans.webp';
+import mandovaLogo from '../assets/Mandova_logo_trans.webp';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -36,7 +36,6 @@ const Header = () => {
 
   return (
     <>
-      {/* Desktop Header - hidden on mobile */}
       <div className="hidden lg:flex items-center justify-around p-0.5 text-white">
         <NavLink to="/Home">
           <div>
@@ -80,7 +79,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Header - visible only on mobile/tablet */}
       <div className="lg:hidden relative">
         <div className="flex items-center justify-between px-4 py-4">
           <NavLink to="/Home">
@@ -107,7 +105,6 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu - positioned relative to mobile header */}
 {isMenuOpen && (
   <div className="absolute top-full left-0 right-0 shadow-lg bg-background z-50 opacity-100 transform translate-y-0 transition-all duration-300 ease-in-out">
     <nav className="px-4 py-4">
