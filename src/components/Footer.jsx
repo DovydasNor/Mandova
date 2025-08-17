@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import mandovaLogo from '../assets/mandova_logo_trans.webp'
+import mandovaLogo from '../assets/Mandova_logo_trans.webp'
 
 const Footer = () => {
   return (
