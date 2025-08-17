@@ -126,7 +126,7 @@ const AboutUs = () => {
 
               <div className="mt-8 text-center">
                 <button className=" cursor-pointer  bg-mandova hover:bg-mandova-dark text-orange text-2xl font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-orange hover:text-texts">
-                  <Link to="/kontaktai">Susisiekite su mumis</Link>
+                  <Link to="/Contacts">Susisiekite su mumis</Link>
                 </button>
               </div>
             </div>

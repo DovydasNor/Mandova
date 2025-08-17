@@ -69,7 +69,7 @@ const Services = () => {
           <div className="text-center mt-12">
             <p className="text-orange text-xl mb-6">Reikalingos individualios konsultacijos?</p>
             <button className="cursor-pointer bg-orange hover:bg-texts text-2xl text-texts hover:text-background font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <Link to="/kontaktai">Susisiekite su mumis</Link>
+              <Link to="/Contacts">Susisiekite su mumis</Link>
             </button>
           </div>
         </div>
