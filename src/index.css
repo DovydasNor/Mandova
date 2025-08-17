@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+    --color-texts: #ab9881;
+    --color-orange: #975a24;
+    --color-background: #262626;
+}
+
+@layer utilities {
+    .text-texts {
+        color: var(--color-texts);
+    }
+
+    .text-orange {
+        color: var(--color-orange);
+    }
+
+    .bg-texts {
+        background-color: var(--color-texts);
+    }
+
+    .bg-background {
+        background-color: var(--color-background);
+    }
+
+    .bg-orange {
+        background-color: var(--color-orange);
+    }
+
+    .hover\:text-orange:hover {
+        color: var(--color-orange);
+    }
+
+    .hover\:bg-mandova:hover {
+        background-color: var(--color-mandova);
+    }
+
+    .hover\:bg-mandova-dark:hover {
+        background-color: #8a7a68;
+    }
+}
