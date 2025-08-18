@@ -62,7 +62,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold text-texts mb-2">El. paštas</h3>
-                  <p className="text-xl text-orange">mbmandova@gmail.com</p>
+                  <p className="text-xl text-orange">info@mandova.lt</p>
                   <p className="text-base text-orange">Atsakysime per 24 val.</p>
                 </div>
               </div>
