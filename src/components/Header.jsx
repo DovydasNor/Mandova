@@ -85,7 +85,7 @@ const Header = () => {
             <img 
               src={mandovaLogo} 
               alt="Logotipas"
-              className="h-10 sm:h-12 w-auto"
+              className="h-30 sm:h-12 w-auto"
             />
           </NavLink>
 
