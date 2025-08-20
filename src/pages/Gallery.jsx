@@ -8,7 +8,7 @@ const Gallery = () => {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768); // md breakpoint
+      setIsMobile(window.innerWidth < 768);
     };
 
     checkScreenSize();
@@ -26,7 +26,6 @@ const Gallery = () => {
       />
       <h1 className='text-texts text-center text-2xl md:text-4xl font-bold mb-8 md:mb-4'>Mūsų darbai</h1>
       
-      {/* Conditional Rendering */}
       {isMobile ? (
         <div className="px-4">
           <MobileGallery />

@@ -1,15 +1,15 @@
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from "ogl";
-import { useEffect, useRef } from "react";
-import img1 from '../assets/Gallery/dazyklos kabykla.webp';
-import img3 from '../assets/Gallery/dazyklos kabykla3.webp';
-import img4 from '../assets/Gallery/letnykas1.webp';
-import img5 from '../assets/Gallery/letnykas2.webp';
-import img6 from '../assets/Gallery/nerza.webp';
-import img7 from '../assets/Gallery/surenkamos lentynos1.webp';
-import img8 from '../assets/Gallery/surenkamos lentynos2.webp';
-import img9 from '../assets/Gallery/vartai.webp';
-import img10 from '../assets/Gallery/vartai190_2.webp';
-import img11 from '../assets/Gallery/vartai190.webp';
+import { useEffect, useRef, useState } from "react";
+import dazyklos_kabykla2 from '../assets/Gallery/dazyklos kabykla2.webp';
+import dazyklos_kabykla3 from '../assets/Gallery/dazyklos kabykla3.webp';
+import letnykas1 from '../assets/Gallery/letnykas1.webp';
+import letnykas2 from '../assets/Gallery/letnykas2.webp';
+import nerza from '../assets/Gallery/nerza.webp';
+import surenkamos_lentynos1 from '../assets/Gallery/surenkamos lentynos1.webp';
+import surenkamos_lentynos2 from '../assets/Gallery/surenkamos lentynos2.webp';
+import vartai from '../assets/Gallery/vartai.webp';
+import vartai190 from '../assets/Gallery/vartai190.webp';
+import vartai190_2 from '../assets/Gallery/vartai190_2.webp';
 
 function debounce(func, wait) {
   let timeout;
@@ -53,7 +53,7 @@ function createTextTexture(gl, text, font = "bold 30px monospace", color = "blac
 }
 
 class Title {
-  constructor({ gl, plane, renderer, text, textColor = "#ab9881", font = "30px sans-serif" }) {
+  constructor({ gl, plane, renderer, text, textColor = "#545050", font = "30px sans-serif" }) {
     autoBind(this);
     this.gl = gl;
     this.plane = plane;
@@ -113,6 +113,7 @@ class Media {
     screen,
     text,
     viewport,
+    bend,
     textColor,
     borderRadius = 0,
     font,
@@ -128,6 +129,7 @@ class Media {
     this.screen = screen;
     this.text = text;
     this.viewport = viewport;
+    this.bend = bend;
     this.textColor = textColor;
     this.borderRadius = borderRadius;
     this.font = font;
@@ -137,7 +139,9 @@ class Media {
     this.onResize();
   }
   createShader() {
-    const texture = new Texture(this.gl, { generateMipmaps: false });
+    const texture = new Texture(this.gl, { 
+      generateMipmaps: true
+    });
     this.program = new Program(this.gl, {
       depthTest: false,
       depthWrite: false,
@@ -153,8 +157,7 @@ class Media {
         void main() {
           vUv = uv;
           vec3 p = position;
-          // Removed the curve effect - keep position flat
-          p.z = 0.0;
+          p.z = (sin(p.x * 4.0 + uTime) * 1.5 + cos(p.y * 2.0 + uTime) * 1.5) * (0.1 + uSpeed * 0.5);
           gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
         }
       `,
@@ -183,11 +186,12 @@ class Media {
           vec4 color = texture2D(tMap, uv);
           
           float d = roundedBoxSDF(vUv - 0.5, vec2(0.5 - uBorderRadius), uBorderRadius);
-          if(d > 0.0) {
-            discard;
-          }
           
-          gl_FragColor = vec4(color.rgb, 1.0);
+          // Smooth antialiasing for edges
+          float edgeSmooth = 0.002;
+          float alpha = 1.0 - smoothstep(-edgeSmooth, edgeSmooth, d);
+          
+          gl_FragColor = vec4(color.rgb, alpha);
         }
       `,
       uniforms: {
@@ -228,9 +232,26 @@ class Media {
   update(scroll, direction) {
     this.plane.position.x = this.x - scroll.current - this.extra;
 
-    // Removed all curve/bend calculations - keep flat
-    this.plane.position.y = 0;
-    this.plane.rotation.z = 0;
+    const x = this.plane.position.x;
+    const H = this.viewport.width / 2;
+
+    if (this.bend === 0) {
+      this.plane.position.y = 0;
+      this.plane.rotation.z = 0;
+    } else {
+      const B_abs = Math.abs(this.bend);
+      const R = (H * H + B_abs * B_abs) / (2 * B_abs);
+      const effectiveX = Math.min(Math.abs(x), H);
+
+      const arc = R - Math.sqrt(R * R - effectiveX * effectiveX);
+      if (this.bend > 0) {
+        this.plane.position.y = -arc;
+        this.plane.rotation.z = -Math.sign(x) * Math.asin(effectiveX / R);
+      } else {
+        this.plane.position.y = arc;
+        this.plane.rotation.z = Math.sign(x) * Math.asin(effectiveX / R);
+      }
+    }
 
     this.speed = scroll.current - scroll.last;
     this.program.uniforms.uTime.value += 0.04;
@@ -249,7 +270,7 @@ class Media {
       this.isBefore = this.isAfter = false;
     }
   }
-onResize({ screen, viewport } = {}) {
+  onResize({ screen, viewport } = {}) {
     if (screen) this.screen = screen;
     if (viewport) {
       this.viewport = viewport;
@@ -257,9 +278,10 @@ onResize({ screen, viewport } = {}) {
         this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
       }
     }
-    this.scale = this.screen.height / 1200; // Changed from 1500 to 1200 for bigger photos
-    this.plane.scale.y = (this.viewport.height * (1100 * this.scale)) / this.screen.height; // Changed from 900 to 1100
-    this.plane.scale.x = (this.viewport.width * (900 * this.scale)) / this.screen.width; // Changed from 700 to 900
+    
+    this.scale = this.screen.height / 900;
+    this.plane.scale.y = (this.viewport.height * (1600 * this.scale)) / this.screen.height; 
+    this.plane.scale.x = (this.viewport.width * (1400 * this.scale)) / this.screen.width; 
     this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
     this.padding = 2;
     this.width = this.plane.scale.x + this.padding;
@@ -273,9 +295,10 @@ class App {
     container,
     {
       items,
-      textColor = "#ab9881",
-      borderRadius = 0.05,
-      font = "bold 20px sans-serif",
+      bend = 0,
+      textColor = "#ffffff",
+      borderRadius = 0,
+      font = "bold 30px Figtree",
       scrollSpeed = 2,
       scrollEase = 0.05,
     } = {}
@@ -290,13 +313,16 @@ class App {
     this.createScene();
     this.onResize();
     this.createGeometry();
-    this.createMedias(items, textColor, borderRadius, font);
+    this.createMedias(items, bend, textColor, borderRadius, font);
     this.update();
     this.addEventListeners();
-    this.autoPlay();
   }
   createRenderer() {
-    this.renderer = new Renderer({ alpha: true });
+    this.renderer = new Renderer({ 
+      alpha: true,
+      antialias: true,
+      dpr: Math.min(window.devicePixelRatio || 1, 2)
+    });
     this.gl = this.renderer.gl;
     this.gl.clearColor(0, 0, 0, 0);
     this.container.appendChild(this.gl.canvas);
@@ -315,18 +341,18 @@ class App {
       widthSegments: 100,
     });
   }
-  createMedias(items, textColor, borderRadius, font) {
+  createMedias(items, bend = 0, textColor, borderRadius, font) {
     const defaultItems = [
-      { image: img1, text: "Dažyklos kabykla" },
-      { image: img3, text: "Dažyklos kabykla 3" },
-      { image: img4, text: "Letnykas 1" },
-      { image: img5, text: "Letnykas 2" },
-      { image: img6, text: "Nerūdijantis plienas" },
-      { image: img7, text: "Surenkamos lentynos 1" },
-      { image: img8, text: "Surenkamos lentynos 2" },
-      { image: img9, text: "Vartai" },
-      { image: img10, text: "Vartai 190_2" },
-      { image: img11, text: "Vartai 190" },
+            { image: dazyklos_kabykla2, text: "Stalažas dažyklai" },
+            { image: dazyklos_kabykla3, text: "Stalažas dažyklai" },
+            { image: letnykas1, text: "Automobilio aliuminis ratas" },
+            { image: letnykas2, text: "Automobilio aliuminis ratas" },
+            { image: nerza, text: "Nerudyjančio plieno konstrukcija" },
+            { image: surenkamos_lentynos1, text: "Surenkamos lentynos" },
+            { image: surenkamos_lentynos2, text: "Surenkamos lentynos" },
+            { image: vartai, text: "Stumdomi vartai" },
+            { image: vartai190, text: "Stumdomi vartai" },
+            { image: vartai190_2, text: "Stumdomi vartai" },
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);
@@ -342,30 +368,17 @@ class App {
         screen: this.screen,
         text: data.text,
         viewport: this.viewport,
+        bend,
         textColor,
         borderRadius,
         font,
       });
     });
   }
-  autoPlay() {
-    // Auto-play functionality
-    this.autoPlayInterval = setInterval(() => {
-      if (!this.isDown && this.medias && this.medias[0]) {
-        this.scroll.target += this.medias[0].width;
-        this.onCheck();
-      }
-    }, 3000);
-  }
   onTouchDown(e) {
     this.isDown = true;
     this.scroll.position = this.scroll.current;
     this.start = e.touches ? e.touches[0].clientX : e.clientX;
-    // Stop auto-play when user interacts
-    if (this.autoPlayInterval) {
-      clearInterval(this.autoPlayInterval);
-      this.autoPlayInterval = null;
-    }
   }
   onTouchMove(e) {
     if (!this.isDown) return;
@@ -379,13 +392,8 @@ class App {
   }
   onWheel(e) {
     const delta = e.deltaY || e.wheelDelta || e.detail;
-    this.scroll.target += delta > 0 ? this.scrollSpeed : -this.scrollSpeed;
+    this.scroll.target += (delta > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.2;
     this.onCheckDebounce();
-    // Stop auto-play when user scrolls
-    if (this.autoPlayInterval) {
-      clearInterval(this.autoPlayInterval);
-      this.autoPlayInterval = null;
-    }
   }
   onCheck() {
     if (!this.medias || !this.medias[0]) return;
@@ -438,9 +446,6 @@ class App {
     window.addEventListener("touchend", this.boundOnTouchUp);
   }
   destroy() {
-    if (this.autoPlayInterval) {
-      clearInterval(this.autoPlayInterval);
-    }
     window.cancelAnimationFrame(this.raf);
     window.removeEventListener("resize", this.boundOnResize);
     window.removeEventListener("mousewheel", this.boundOnWheel);
@@ -457,20 +462,81 @@ class App {
   }
 }
 
-export default function MobileGallery({
+export default function CircularGallery({
   items,
-  textColor = "#ab9881",
+  bend = 0,
+  textColor = "#ffffff",
   borderRadius = 0.05,
-  font = "bold 20px sans-serif",
+  font = "bold 30px Figtree",
   scrollSpeed = 2,
   scrollEase = 0.05,
 }) {
   const containerRef = useRef(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalIdx, setModalIdx] = useState(null);
+  
+  const [modalVisible, setModalVisible] = useState(false);
   useEffect(() => {
-    const app = new App(containerRef.current, { items, textColor, borderRadius, font, scrollSpeed, scrollEase });
+    const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase });
+    const canvas = containerRef.current?.querySelector('canvas');
+    if (canvas) {
+      canvas.addEventListener('click', () => {
+        if (app.medias && app.medias.length) {
+          
+          const width = app.medias[0].width;
+          let idx = Math.round(Math.abs(app.scroll.current) / width);
+          
+          if (app.scroll.current < 0) idx = -idx;
+          
+          const activeIdx = ((idx % galleryItems.length) + galleryItems.length) % galleryItems.length;
+          setModalIdx(activeIdx);
+          setModalOpen(true);
+          setTimeout(() => setModalVisible(true), 10);
+        }
+      });
+    }
     return () => {
       app.destroy();
+      if (canvas) canvas.onclick = null;
     };
-  }, [items, textColor, borderRadius, font, scrollSpeed, scrollEase]);
-  return <div className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing" ref={containerRef} />;
+  }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase]);
+  
+  function handleCloseModal() {
+    setModalVisible(false);
+    setTimeout(() => {
+      setModalOpen(false);
+      setModalIdx(null);
+    }, 300);
+  }
+  const galleryItems = items && items.length ? items : [
+      { image: dazyklos_kabykla2, text: "Stalažas dažyklai" },
+      { image: dazyklos_kabykla3, text: "Stalažas dažyklai" },
+      { image: letnykas1, text: "Automobilio aliuminis ratas" },
+      { image: letnykas2, text: "Automobilio aliuminis ratas" },
+      { image: nerza, text: "Nerudyjančio plieno konstrukcija" },
+      { image: surenkamos_lentynos1, text: "Surenkamos lentynos" },
+      { image: surenkamos_lentynos2, text: "Surenkamos lentynos" },
+      { image: vartai, text: "Stumdomi vartai" },
+      { image: vartai190, text: "Stumdomi vartai" },
+      { image: vartai190_2, text: "Stumdomi vartai" },
+  ];
+  return (
+    <div className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing relative" ref={containerRef}>
+      
+      {modalOpen && modalIdx !== null && (
+        <div
+          className={`fixed inset-0 flex items-center justify-center z-50 backdrop-blur-md transition-all duration-300 ${modalVisible ? 'opacity-100' : 'opacity-0'}`}
+          onClick={handleCloseModal}
+        >
+          <div
+            className={`flex flex-col items-center transition-all duration-300 ${modalVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
+            onClick={e => e.stopPropagation()}
+          >
+            <img src={galleryItems[modalIdx].image} alt={galleryItems[modalIdx].text} className="w-full h-auto rounded mb-4" style={{maxHeight: '70vh'}} />
+            <span className="block text-xl font-bold text-orange mb-2 text-center drop-shadow-lg">{galleryItems[modalIdx].text}</span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
