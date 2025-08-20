@@ -2,7 +2,7 @@ import hero from '../assets/welding-work-with-metal-construction-busy-metal-fact
 const Hero = () => {
   return (
     <>
-      {/* Mobile: only text, no image, bigger text, better spacing */}
+      
       <div className="block sm:hidden w-full pt-8 px-4">
         <div className="text-center text-white max-w-2xl mx-auto">
           <h1 className="text-2xl font-bold mb-4 drop-shadow-lg text-texts leading-tight">
@@ -20,7 +20,7 @@ const Hero = () => {
           />
         </div>
       </div>
-      {/* Tablet and up: original design */}
+      
       <div className="hidden sm:block relative h-64 md:h-80 lg:h-96 w-full overflow-hidden">
         <img 
           src={hero} 
