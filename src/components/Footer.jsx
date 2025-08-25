@@ -54,14 +54,14 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-mandova">Nuorodos</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#apie" className="text-gray-300 hover:text-white transition-colors duration-300">
+                <Link to="/" state={{scrollTo: 'apie'}} className="text-gray-300 hover:text-white transition-colors duration-300">
                   Apie mus
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#paslaugos" className="text-gray-300 hover:text-white transition-colors duration-300">
+                <Link to="/" state={{scrollTo: 'paslaugos'}} className="text-gray-300 hover:text-white transition-colors duration-300">
                   Paslaugos
-                </a>
+                </Link>
               </li>
               <li>
                 <Link to="/Contacts" className="text-gray-300 hover:text-white transition-colors duration-300">
