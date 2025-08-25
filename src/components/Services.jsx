@@ -29,7 +29,7 @@ const Services = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
 
-            <div className=" bg-orange text-center group hover:shadow-lg transition-all duration-300 p-6 rounded-lg hover:-translate-y-8">
+            <div className="bg-orange text-center group transition-all duration-300 p-6 rounded-lg lg:hover:-translate-y-8 lg:hover:shadow-lg" style={{ touchAction: 'manipulation' }}>
               <div className="w-16 h-16 bg-mandova/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-mandova/20 transition-colors">
                 <svg className="w-8 h-8 text-mandova" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
@@ -41,7 +41,7 @@ const Services = () => {
               </p>
             </div>
 
-            <div className="bg-orange text-center group hover:shadow-lg transition-all duration-300 p-6 rounded-lg hover:-translate-y-8">
+            <div className="bg-orange text-center group transition-all duration-300 p-6 rounded-lg lg:hover:-translate-y-8 lg:hover:shadow-lg" style={{ touchAction: 'manipulation' }}>
               <div className="w-16 h-16 bg-mandova/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-mandova/20 transition-colors">
                 <svg className="w-8 h-8 text-mandova" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -53,7 +53,7 @@ const Services = () => {
               </p>
             </div>
 
-            <div className="bg-orange text-center group hover:shadow-lg transition-all duration-300 p-6 rounded-lg hover:-translate-y-8">
+            <div className="bg-orange text-center group transition-all duration-300 p-6 rounded-lg lg:hover:-translate-y-8 lg:hover:shadow-lg" style={{ touchAction: 'manipulation' }}>
               <div className="w-16 h-16 bg-mandova/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-mandova/20 transition-colors">
                 <svg className="w-8 h-8 text-mandova" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
