@@ -31,7 +31,8 @@ const Hero = () => {
           decoding='async'
         />
         <div className="text-orange font-bold text-sm md:text-base lg:text-lg xl:text-xl z-30 absolute top-4 right-3 md:right-4 lg:right-6">
-          \\\\\\\\\\\n        </div>
+          \\\\\\\\\\\\\\\\\\\\\
+        </div>
         <div className="absolute inset-0"></div>
         <div className="relative z-10 flex items-center justify-center h-full px-3 md:px-4">
           <div className="text-center text-white max-w-4xl">
