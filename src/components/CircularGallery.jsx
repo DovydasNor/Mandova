@@ -1,5 +1,5 @@
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from "ogl";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import dazyklos_kabykla2 from '../assets/Gallery/dazyklos kabykla2.webp';
 import dazyklos_kabykla3 from '../assets/Gallery/dazyklos kabykla3.webp';
 import letnykas1 from '../assets/Gallery/letnykas1.webp';
@@ -312,6 +312,11 @@ class App {
     this.createMedias(items, bend, textColor, borderRadius, font);
     this.update();
     this.addEventListeners();
+    this.modalOpen = false;
+    this.modalIndex = 0;
+    this.swipeStartX = null;
+    this.swipeDeltaX = 0;
+    this.swipeActive = false;
   }
   createRenderer() {
     this.renderer = new Renderer({ alpha: true });
@@ -464,11 +469,130 @@ export default function CircularGallery({
   scrollEase = 0.05,
 }) {
   const containerRef = useRef(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalIdx, setModalIdx] = useState(null);
+  const [modalVisible, setModalVisible] = useState(false);
+  const dragStartPos = useRef({ x: 0, y: 0 });
+
+  const galleryItems = items && items.length ? items : [
+    { image: dazyklos_kabykla2, text: "Stalažas dažyklai" },
+    { image: dazyklos_kabykla3, text: "Stalažas dažyklai" },
+    { image: letnykas1, text: "Automobilio aliuminis ratas" },
+    { image: letnykas2, text: "Automobilio aliuminis ratas" },
+    { image: nerza, text: "Nerudyjančio plieno konstrukcija" },
+    { image: surenkamos_lentynos1, text: "Surenkamos lentynos" },
+    { image: surenkamos_lentynos2, text: "Surenkamos lentynos" },
+    { image: vartai, text: "Stumdomi vartai" },
+    { image: vartai190, text: "Stumdomi vartai" },
+    { image: vartai190_2, text: "Stumdomi vartai" },
+  ];
+
   useEffect(() => {
     const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase });
+    const canvas = containerRef.current?.querySelector('canvas');
+    function onStart(e) {
+      let point = null;
+      if (e.touches && e.touches.length > 0) {
+        point = e.touches[0];
+      } else if ('screenX' in e && 'screenY' in e) {
+        point = e;
+      }
+      if (point) {
+        dragStartPos.current = { x: point.screenX, y: point.screenY };
+      }
+    }
+    function onStop(e) {
+      let point = null;
+      if (e.touches && e.touches.length > 0) {
+        point = e.touches[0];
+      } else if ('screenX' in e && 'screenY' in e) {
+        point = e;
+      }
+      if (!point || dragStartPos.current.x === undefined || dragStartPos.current.y === undefined) return;
+      const dragX = Math.abs(dragStartPos.current.x - point.screenX);
+      const dragY = Math.abs(dragStartPos.current.y - point.screenY);
+      if (dragX < 5 && dragY < 5) {
+        if (app.medias && app.medias.length) {
+          const width = app.medias[0].width;
+          let idx = Math.round(Math.abs(app.scroll.current) / width);
+          if (app.scroll.current < 0) idx = -idx;
+          const activeIdx = ((idx % galleryItems.length) + galleryItems.length) % galleryItems.length;
+          setModalIdx(activeIdx);
+          setModalOpen(true);
+          setTimeout(() => setModalVisible(true), 10);
+        }
+      } else {
+        // Drag detected, do not open modal
+      }
+    }
+    if (canvas) {
+      canvas.addEventListener('mousedown', onStart);
+      canvas.addEventListener('touchstart', onStart);
+      canvas.addEventListener('mouseup', onStop);
+      canvas.addEventListener('touchend', onStop);
+    }
     return () => {
       app.destroy();
+      if (canvas) {
+        canvas.removeEventListener('mousedown', onStart);
+        canvas.removeEventListener('touchstart', onStart);
+        canvas.removeEventListener('mouseup', onStop);
+        canvas.removeEventListener('touchend', onStop);
+      }
     };
-  }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase]);
-  return <div className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing" ref={containerRef} />;
+  }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase, galleryItems.length]);
+
+  function handleCloseModal() {
+    setModalVisible(false);
+    setTimeout(() => {
+      setModalOpen(false);
+      setModalIdx(null);
+    }, 300);
+  }
+
+  return (
+    <div className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing relative" ref={containerRef}>
+      {modalOpen && modalIdx !== null && (
+        <div
+          className={`fixed inset-0 flex items-center justify-center z-50 backdrop-blur-md transition-all duration-300 ${modalVisible ? 'opacity-100' : 'opacity-0'}`}
+          onClick={handleCloseModal}
+        >
+          <div
+            className={`flex flex-col items-center relative transition-all duration-300 ${modalVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
+            onClick={e => e.stopPropagation()}
+            style={{ minWidth: '320px' }}
+          >
+            <button
+              className="absolute top-2 right-2 text-orange text-3xl font-bold rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
+              style={{ color: '#ff9900' }}
+              onClick={handleCloseModal}
+              aria-label="Uždaryti"
+            >
+              &#10005;
+            </button>
+            
+            <button
+              className="cursor-pointer text-orange absolute left-2 top-1/2 transform -translate-y-1/2 text-3xl font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-opacity-100 z-10"
+              style={{ left: 0 }}
+              onClick={() => setModalIdx((modalIdx - 1 + galleryItems.length) % galleryItems.length)}
+              aria-label="Ankstesnis"
+            >
+              <span className="material-icons" style={{ fontSize: '2.2rem', color: '#ff9900' }}>arrow_back_ios_new</span>
+            </button>
+            
+            <button
+              className="cursor-pointer text-orange absolute right-2 top-1/2 transform -translate-y-1/2 text-3xl font-bold  rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-opacity-100 z-10"
+              style={{ right: 0 }}
+              onClick={() => setModalIdx((modalIdx + 1) % galleryItems.length)}
+              aria-label="Kitas"
+            >
+              <span className="material-icons" style={{ fontSize: '2.2rem', color: '#ff9900' }}>arrow_forward_ios</span>
+            </button>
+            <img src={galleryItems[modalIdx].image} alt={galleryItems[modalIdx].text} className="w-full h-auto rounded mb-4" style={{maxHeight: '90vh', width: 'auto', maxWidth: '90vw'}} />
+            <span className="block text-xl font-bold text-orange mb-2 text-center drop-shadow-lg">{galleryItems[modalIdx].text}</span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }

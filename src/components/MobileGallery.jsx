@@ -508,6 +508,30 @@ export default function CircularGallery({
       setModalIdx(null);
     }, 300);
   }
+    const touchStartX = useRef(null);
+    const touchEndX = useRef(null);
+
+    function handleTouchStart(e) {
+      touchStartX.current = e.touches ? e.touches[0].clientX : e.clientX;
+    }
+
+    function handleTouchMove(e) {
+      touchEndX.current = e.touches ? e.touches[0].clientX : e.clientX;
+    }
+
+    function handleTouchEnd() {
+      if (touchStartX.current === null || touchEndX.current === null) return;
+      const delta = touchEndX.current - touchStartX.current;
+      if (Math.abs(delta) > 50) {
+        if (delta < 0) {
+          setModalIdx(idx => (idx + 1) % galleryItems.length);
+        } else {
+          setModalIdx(idx => (idx - 1 + galleryItems.length) % galleryItems.length);
+        }
+      }
+      touchStartX.current = null;
+      touchEndX.current = null;
+    }
   const galleryItems = items && items.length ? items : [
       { image: dazyklos_kabykla2, text: "Stalažas dažyklai" },
       { image: dazyklos_kabykla3, text: "Stalažas dažyklai" },
@@ -521,30 +545,33 @@ export default function CircularGallery({
       { image: vartai190_2, text: "Stumdomi vartai" },
   ];
   return (
-    <div className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing relative" ref={containerRef}>
-      
-      {modalOpen && modalIdx !== null && (
-        <div
-          className={`fixed inset-0 flex items-center justify-center z-50 backdrop-blur-md transition-all duration-300 ${modalVisible ? 'opacity-100' : 'opacity-0'}`}
-          onClick={handleCloseModal}
-        >
+      <div className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing relative" ref={containerRef}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        {modalOpen && modalIdx !== null && (
           <div
-            className={`flex flex-col items-center relative transition-all duration-300 ${modalVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
-            onClick={e => e.stopPropagation()}
+            className={`fixed inset-0 flex items-center justify-center z-50 backdrop-blur-md transition-all duration-300 ${modalVisible ? 'opacity-100' : 'opacity-0'}`}
+            onClick={handleCloseModal}
           >
-            <button
-              className="absolute top-2 right-2 text-orange text-3xl font-bold bg-opacity-80 rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-opacity-100 z-10"
-              style={{ color: '#ff9900' }}
-              onClick={handleCloseModal}
-              aria-label="Uždaryti"
+            <div
+              className={`flex flex-col items-center relative transition-all duration-300 ${modalVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
+              onClick={e => e.stopPropagation()}
             >
-              &#10005;
-            </button>
-            <img src={galleryItems[modalIdx].image} alt={galleryItems[modalIdx].text} className="w-full h-auto rounded mb-4" style={{maxHeight: '70vh'}} />
-            <span className="block text-xl font-bold text-orange mb-2 text-center drop-shadow-lg">{galleryItems[modalIdx].text}</span>
+              <button
+                className="absolute top-2 right-2 text-orange text-3xl font-bold bg-opacity-80 rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-opacity-100 z-10"
+                style={{ color: '#ff9900' }}
+                onClick={handleCloseModal}
+                aria-label="Uždaryti"
+              >
+                &#10005;
+              </button>
+              <img src={galleryItems[modalIdx].image} alt={galleryItems[modalIdx].text} className="w-full h-auto mb-4" style={{maxHeight: '70vh', borderRadius: '1rem'}} />
+              <span className="block text-xl font-bold text-orange mb-2 text-center drop-shadow-lg">{galleryItems[modalIdx].text}</span>
+            </div>
           </div>
-        </div>
-      )}
-    </div>
-  );
+        )}
+      </div>
+    );
 }
