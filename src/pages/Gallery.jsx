@@ -4,11 +4,11 @@ import MobileGallery from '../components/MobileGallery';
 import lines from '../assets/lines.webp';
 
 const Gallery = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobileOrTablet(window.innerWidth < 1024);
     };
 
     checkScreenSize();
@@ -26,7 +26,7 @@ const Gallery = () => {
       />
       <h1 className='text-texts text-center text-2xl md:text-4xl font-bold mb-8 md:mb-4'>Mūsų darbai</h1>
       
-      {isMobile ? (
+      {isMobileOrTablet ? (
         <div className="px-4">
           <MobileGallery />
         </div>
