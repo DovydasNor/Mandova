@@ -64,7 +64,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/Contacts" className="text-gray-300 hover:text-white transition-colors duration-300">
+                <Link to="/Contacts" state={{scrollTo: 'kontaktai'}} className="text-gray-300 hover:text-white transition-colors duration-300">
                   Kontaktai
                 </Link>
               </li>

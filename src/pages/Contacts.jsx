@@ -1,6 +1,19 @@
+import { useEffect } from 'react';
+import { useLocation } from "react-router-dom";
 import lines from '../assets/lines.webp'
 
 const Contacts = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+      if (location.state?.scrollTo) {
+        const el = document.getElementById(location.state.scrollTo);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }, [location.state]);
+
   return (
     <div id="kontaktai" className="min-h-screen py-16 relative">
 
@@ -15,7 +28,7 @@ const Contacts = () => {
           
           <div className="text-center mb-16">
             <h1 className="text-4xl font-bold text-texts mb-6">
-              Susisiekite su <span className="text-mandova">mumis</span>
+              Susisiekite su mumis
             </h1>
             <div className="w-24 h-1 bg-mandova mx-auto mb-8"></div>
             <p className="text-xl text-orange max-w-3xl mx-auto">
