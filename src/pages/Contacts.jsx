@@ -46,10 +46,10 @@ const Contacts = () => {
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                   </svg>
                 </div>
-                <div>
+                <div className='flex flex-col'>
                   <h3 className="text-2xl font-semibold text-texts mb-2">Telefonas</h3>
-                  <p className="text-xl text-orange font-medium">+370 622 23642</p>
-                  <p className="text-xl text-orange font-medium">+370 653 99915</p>
+                  <a href='tel:+37062223642' className="text-xl text-orange font-medium">+370 622 23642</a>
+                  <a href='tel:+37065399915' className="text-xl text-orange font-medium">+370 653 99915</a>
                 </div>
               </div>
 
@@ -62,7 +62,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold text-texts mb-2">El. paštas</h3>
-                  <p className="text-xl text-orange">info@mandova.lt</p>
+                  <a href='mailto:info@mandova.lt' className="text-xl text-orange">info@mandova.lt</a>
                   <p className="text-base text-orange">Atsakysime per 24 val.</p>
                 </div>
               </div>
