@@ -1,0 +1,149 @@
+  
+{
+  "welcome_message": "Welcome to Mandova!",
+  "services_title": "Our Services",
+  "contact_us": "Contact Us",
+  "header": {
+    "about": "About Us",
+    "gallery": "Gallery",
+    "contacts": "Contacts"
+  },
+  "hero": {
+    "title": "Quality welding, impressive results",
+    "subtitle": "Building a stronger future - project by project",
+    "image_alt": "Welding work at Mandova factory"
+  },
+  "services": {
+    "lines_alt": "Decorative lines",
+    "title": "Our Services",
+    "subtitle": "Professional welding solutions for all your needs",
+    "card1": {
+      "title": "Metal constructions",
+      "desc": "Manufacturing of strong and reliable metal constructions according to individual projects"
+    },
+    "card2": {
+      "title": "Repair works",
+      "desc": "Fast and high-quality repair and restoration of metal products"
+    },
+    "card3": {
+      "title": "Welding services",
+      "desc": "Professional welding using the latest technologies"
+    },
+    "consultation": "Need individual consultations?"
+  },
+  "about": {
+    "title": "About Mandova",
+    "subtitle": "For over 2 years we have been providing professional welding and metal construction solutions",
+    "professionalism_title": "Professionalism and reliability",
+    "professionalism_desc1": "Mandova is a reliable partner specializing in high-quality welding services and metal construction manufacturing. Our team has years of experience and uses the latest technologies.",
+    "professionalism_desc2": "We work on a variety of projects – from small repairs to large industrial sites. Our goal is to provide clients with the best quality and reliability.",
+    "experience": "2 years of experience",
+    "experience_alt": "Experience",
+    "certificate": "Certified specialists",
+    "certificate_alt": "Certificate",
+    "machines": "Modern equipment",
+    "machines_alt": "Industrial equipment",
+    "quality": "Guaranteed quality",
+    "quality_alt": "Quality",
+    "results_title": "Our results",
+    "projects_done": "Completed projects",
+    "years_experience": "Years of experience",
+    "projects_ongoing": "Ongoing projects",
+    "happy_clients": "Happy clients",
+    "quality_card_title": "Quality",
+    "quality_card_desc": "We use only the highest quality materials and equipment",
+    "reliability_card_title": "Reliability",
+    "reliability_card_desc": "We always meet agreed deadlines and commitments",
+    "reliability_alt": "Reliability",
+    "innovation_card_title": "Innovation",
+    "innovation_card_desc": "We constantly invest in new technology and methods",
+    "innovation_alt": "Innovation"
+  },
+
+  "footer": {
+      "description": "Professional welding solutions and metal construction manufacturing. For over 2 years we have been providing top quality services.",
+    "links_title": "Links",
+    "contacts_title": "Contacts",
+    "address": "J. Basanavičiaus g. 144a Šiauliai, Lithuania",
+    "copyright": "© 2025 Mandova. All rights reserved.",
+    "privacy_policy": "Privacy Policy"
+    },
+    "contacts": {
+      "lines_alt": "Decorative lines",
+      "title": "Contact Us",
+      "subtitle": "Ready to answer your questions and discuss projects",
+      "address_title": "Address",
+      "address_line1": "J. Basanavičiaus g. 144a",
+      "address_line2": "76128 Šiauliai, Lithuania",
+      "phone_title": "Phone",
+      "email_title": "Email",
+      "email_note": "We will reply within 24 hours.",
+      "map_title": "How to find us",
+      "open_map": "Open in Maps"
+  },
+
+  "gallery": {
+    "title": "Our Work",
+    "lines_alt": "Decorative lines",
+    "stalazas_dazyklai": "Rack for painting booth",
+    "aliuminis_ratas": "Aluminum car wheel",
+    "nerudijancio_konstrukcija": "Stainless steel construction",
+    "surenkamos_lentynos": "Assembled shelves",
+    "stumdomi_vartai": "Sliding gates",
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next"
+  },
+
+  "privacy": {
+    "title": "Privacy Policy",
+    "intro": "This Privacy Policy provides information on how the website https://www.mandova.lt administration (hereinafter - Data Controller) processes your personal data when you visit the website https://www.mandova.lt.",
+    "contacts_title": "Data Controller Contacts",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "data_title": "What personal data do we process?",
+    "data_intro": "The website does not collect any direct data except what may be collected by third parties (Google, social networks).",
+    "third_party_title": "Third-party services",
+    "third_party_intro": "The website integrates a Google Maps map provided by Google LLC. When opening the map, information such as user IP address, browser data may be transmitted. More information - ",
+    "google_policy": "Google Privacy Policy",
+    "social_title": "How do we process your personal data on social networks?",
+    "social_intro": "The Data Controller manages and administers the following official accounts on social networks:",
+    "social_details": "When you interact with us on these accounts - for example, send a message, comment, like, or perform other actions - we may see certain information about you: publicly visible username, content of comments or messages, etc. We use this data to respond to your questions, feedback, or provide suggestions.",
+    "social_joint": "In such cases, data processing is carried out on a joint control basis, i.e., your data is processed together with us by the respective social network operator.",
+    "social_recommend": "We recommend reviewing the privacy policies of the respective platforms.",
+    "processing_title": "How is your personal data processed?",
+    "processing_law": "Your personal data will be processed in accordance with the General Data Protection Regulation (GDPR), the Law on Legal Protection of Personal Data of the Republic of Lithuania, and other applicable national and international legal acts.",
+    "processing_principles": "Data is processed only for clearly defined and legitimate purposes, following the principles of minimal scope, accuracy, security, storage duration limitation, and accountability.",
+    "processing_security": "Appropriate technical and organizational measures are used to ensure your data protection against unlawful or accidental disclosure, alteration, loss, or destruction.",
+    "rights_title": "Your rights",
+    "rights_info": "Receive information about your data processing",
+    "rights_correct": "Request correction of inaccurate or incomplete data",
+    "rights_delete": "Request deletion of your data ('right to be forgotten')",
+    "rights_limit": "Restrict data processing",
+    "rights_port": "Receive data in a structured, commonly used format ('data portability')",
+    "rights_object": "Object to data processing (e.g., for marketing purposes)",
+    "rights_withdraw": "Withdraw consent at any time",
+    "rights_how": "You can exercise these rights by contacting the Data Controller via email: info@mandova.lt",
+    "complaints_title": "Complaints",
+    "complaints_intro": "If you believe that your rights as a data subject have been or may have been violated, we invite you to first contact us using the contacts provided in this Privacy Policy. Upon receiving your request or complaint, we will take action as soon as possible - we will review the situation and inform you about the progress and result of the review.",
+    "complaints_next": "If our response does not satisfy you or you believe the issue has not been resolved properly, you have the right to submit a complaint to ",
+    "complaints_link": "State Data Protection Inspectorate",
+    "final_title": "Final provisions",
+    "final_details": "You are responsible for ensuring that the personal data you provide to us is accurate, current, and correct. If your data changes, please notify us by email without delay so that we can ensure proper processing. We are not responsible for any losses or inconveniences that may arise from providing incorrect, incomplete, or outdated information, or failing to notify us of changes.",
+    "final_update": "We reserve the right to update or change this privacy policy at any time. Updates take effect from the date they are published on the website, unless otherwise stated.",
+    "last_updated": "Last updated: 2025-08-19",
+    "copyright": "The content of this privacy policy is the intellectual property of dokumentai24.lt and is protected by copyright. Copying, distributing, or otherwise using the entire document or any part of it without written permission is prohibited. Usage rights granted to the website https://www.mandova.lt."
+  },
+
+  "notfound": {
+    "linesAlt": "Decorative lines",
+    "title": "Page",
+    "titleHighlight": "not found",
+    "description1": "Sorry, the page you are looking for does not exist or has been moved.",
+    "description2": "Check the URL or return to the homepage.",
+    "backHome": "Back to Home",
+    "contactUs": "Contact Us",
+    "needHelp": "Need help? Contact us:"
+  }
+}

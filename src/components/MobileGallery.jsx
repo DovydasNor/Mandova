@@ -1,5 +1,6 @@
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from "ogl";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
+import { useTranslation } from 'react-i18next';
 import dazyklos_kabykla2 from '../assets/Gallery/dazyklos kabykla2.webp';
 import dazyklos_kabykla3 from '../assets/Gallery/dazyklos kabykla3.webp';
 import letnykas1 from '../assets/Gallery/letnykas1.webp';
@@ -532,18 +533,24 @@ export default function CircularGallery({
       touchStartX.current = null;
       touchEndX.current = null;
     }
-  const galleryItems = items && items.length ? items : [
-      { image: dazyklos_kabykla2, text: "Stalažas dažyklai" },
-      { image: dazyklos_kabykla3, text: "Stalažas dažyklai" },
-      { image: letnykas1, text: "Automobilio aliuminis ratas" },
-      { image: letnykas2, text: "Automobilio aliuminis ratas" },
-      { image: nerza, text: "Nerudyjančio plieno konstrukcija" },
-      { image: surenkamos_lentynos1, text: "Surenkamos lentynos" },
-      { image: surenkamos_lentynos2, text: "Surenkamos lentynos" },
-      { image: vartai, text: "Stumdomi vartai" },
-      { image: vartai190, text: "Stumdomi vartai" },
-      { image: vartai190_2, text: "Stumdomi vartai" },
-  ];
+  const { t, i18n } = useTranslation();
+  const galleryItems = useMemo(() => {
+    if (items && items.length) {
+      return items.map(item => ({ ...item, text: t(item.text) }));
+    }
+    return [
+      { image: dazyklos_kabykla2, text: t('gallery.stalazas_dazyklai') },
+      { image: dazyklos_kabykla3, text: t('gallery.stalazas_dazyklai') },
+      { image: letnykas1, text: t('gallery.aliuminis_ratas') },
+      { image: letnykas2, text: t('gallery.aliuminis_ratas') },
+      { image: nerza, text: t('gallery.nerudijancio_konstrukcija') },
+      { image: surenkamos_lentynos1, text: t('gallery.surenkamos_lentynos') },
+      { image: surenkamos_lentynos2, text: t('gallery.surenkamos_lentynos') },
+      { image: vartai, text: t('gallery.stumdomi_vartai') },
+      { image: vartai190, text: t('gallery.stumdomi_vartai') },
+      { image: vartai190_2, text: t('gallery.stumdomi_vartai') },
+    ];
+  }, [items, i18n.language]);
   return (
       <div className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing relative" ref={containerRef}
         onTouchStart={handleTouchStart}

@@ -1,45 +1,42 @@
 import { useEffect } from 'react';
 import { useLocation } from "react-router-dom";
-import lines from '../assets/lines.webp'
+import { useTranslation } from 'react-i18next';
+import lines from '../assets/lines.webp';
+
 
 const Contacts = () => {
-    const location = useLocation();
+  const location = useLocation();
+  const { t } = useTranslation();
 
-    useEffect(() => {
-      if (location.state?.scrollTo) {
-        const el = document.getElementById(location.state.scrollTo);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
-        }
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const el = document.getElementById(location.state.scrollTo);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
       }
-    }, [location.state]);
+    }
+  }, [location.state]);
 
   return (
     <div id="kontaktai" className="min-h-screen py-16 relative">
-
       <img 
         src={lines}
-        alt="Decorative lines"
+        alt={t('contacts.lines_alt')}
         className="absolute inset-0 w-full h-full object-cover object-center opacity-20"
       />
-      
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
-          
           <div className="text-center mb-16">
             <h1 className="text-4xl font-bold text-texts mb-6">
-              Susisiekite su mumis
+              {t('contacts.title')}
             </h1>
             <div className="w-24 h-1 bg-mandova mx-auto mb-8"></div>
             <p className="text-xl text-orange max-w-3xl mx-auto">
-              Pasiruošę atsakyti į jūsų klausimus ir aptarti projektus
+              {t('contacts.subtitle')}
             </p>
           </div>
-
           <div className="grid lg:grid-cols-2 gap-16">
-            
             <div className="space-y-12">
-              
               <div className="flex items-start space-x-6">
                 <div className="w-12 h-12 bg-mandova/10 rounded-full flex items-center justify-center mt-2 flex-shrink-0">
                   <svg className="w-6 h-6" fill="#ab9881" viewBox="0 0 20 20">
@@ -47,12 +44,11 @@ const Contacts = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-texts mb-2">Adresas</h3>
-                  <p className="text-lg text-orange">J. Basanavičiaus g. 144a</p>
-                  <p className="text-lg text-orange">76128 Šiauliai, Lietuva</p>
+                  <h3 className="text-2xl font-semibold text-texts mb-2">{t('contacts.address_title')}</h3>
+                  <p className="text-lg text-orange">{t('contacts.address_line1')}</p>
+                  <p className="text-lg text-orange">{t('contacts.address_line2')}</p>
                 </div>
               </div>
-
               <div className="flex items-start space-x-6">
                 <div className="w-12 h-12 bg-mandova/10 rounded-full flex items-center justify-center mt-2 flex-shrink-0">
                   <svg className="w-6 h-6" fill="#ab9881" viewBox="0 0 20 20">
@@ -60,12 +56,11 @@ const Contacts = () => {
                   </svg>
                 </div>
                 <div className='flex flex-col'>
-                  <h3 className="text-2xl font-semibold text-texts mb-2">Telefonas</h3>
+                  <h3 className="text-2xl font-semibold text-texts mb-2">{t('contacts.phone_title')}</h3>
                   <a href='tel:+37062223642' className="text-xl text-orange font-medium">+370 622 23642</a>
                   <a href='tel:+37065399915' className="text-xl text-orange font-medium">+370 653 99915</a>
                 </div>
               </div>
-
               <div className="flex items-start space-x-6">
                 <div className="w-12 h-12 bg-mandova/10 rounded-full flex items-center justify-center mt-2 flex-shrink-0">
                   <svg className="w-6 h-6" fill="#ab9881" viewBox="0 0 20 20">
@@ -74,15 +69,14 @@ const Contacts = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-texts mb-2">El. paštas</h3>
+                  <h3 className="text-2xl font-semibold text-texts mb-2">{t('contacts.email_title')}</h3>
                   <a href='mailto:info@mandova.lt' className="text-xl text-orange">info@mandova.lt</a>
-                  <p className="text-base text-orange">Atsakysime per 24 val.</p>
+                  <p className="text-base text-orange">{t('contacts.email_note')}</p>
                 </div>
               </div>
             </div>
-
             <div>
-              <h2 className="text-2xl font-semibold text-texts mb-8">Kaip mus rasti</h2>
+              <h2 className="text-2xl font-semibold text-texts mb-8">{t('contacts.map_title')}</h2>
               <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2233.331514106501!2d23.317763076789312!3d55.96095747316198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e5e384182afc51%3A0xbdeee0bfb4ba6928!2sMandova!5e0!3m2!1slt!2slt!4v1754823334594!5m2!1slt!2slt"
@@ -102,7 +96,7 @@ const Contacts = () => {
                   rel="noopener noreferrer"
                   className="bg-mandova hover:bg-mandova-dark text-white px-6 py-3 rounded-lg transition-colors duration-300 inline-block"
                 >
-                  Atidaryti žemėlapyje
+                  {t('contacts.open_map')}
                 </a>
               </div>
             </div>
@@ -110,7 +104,7 @@ const Contacts = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contacts
+export default Contacts;
