@@ -1,0 +1,149 @@
+
+{
+  "welcome_message": "Sveiki atvykę į Mandova!",
+  "services_title": "Mūsų Paslaugos",
+  "contact_us": "Susisiekite su mumis",
+  "header": {
+    "about": "Apie mus",
+    "gallery": "Darbų galerija",
+    "contacts": "Kontaktai"
+  },
+  "hero": {
+    "title": "Kokybiškas suvirinimas, džiuginantys rezultatai",
+    "subtitle": "Statome tvirtesnę ateitį - vienas projektas po kito",
+    "image_alt": "Suvirinimo darbai Mandova gamykloje"
+  },
+  "services": {
+    "lines_alt": "Dekoratyvinės linijos",
+    "title": "Mūsų Paslaugos",
+    "subtitle": "Profesionalūs suvirinimo sprendimai visoms jūsų reikmėms",
+    "card1": {
+      "title": "Metalo konstrukcijos",
+      "desc": "Tvirtų ir patikimų metalo konstrukcijų gamyba pagal individualius projektus"
+    },
+    "card2": {
+      "title": "Remonto darbai",
+      "desc": "Greitas ir kokybiškas metalo gaminių remontas bei atkūrimas"
+    },
+    "card3": {
+      "title": "Suvirinimo paslaugos",
+      "desc": "Profesionalus suvirinimas naudojant pažangiausias technologijas"
+    },
+    "consultation": "Reikalingos individualios konsultacijos?"
+  },
+  "about": {
+    "title": "Apie Mandova",
+    "subtitle": "Jau daugiau nei 2 metus teikiame profesionalius suvirinimo ir metalo konstrukcijų gamybos sprendimus",
+    "professionalism_title": "Profesionalumas ir patikimumas",
+    "professionalism_desc1": "Mandova - tai patikimas partneris, kuris specializuojasi aukštos kokybės suvirinimo paslaugose ir metalo konstrukcijų gamyboje. Mūsų komanda turi ilgametę patirtį ir naudoja pažangiausias technologijas.",
+    "professionalism_desc2": "Mes dirbame su įvairiausiais projektais - nuo smulkių remonto darbų iki didelių pramonės objektų. Mūsų tikslas - suteikti klientams geriausią kokybę ir patikimumą.",
+    "experience": "2 metų patirtis",
+    "experience_alt": "Patirtis",
+    "certificate": "Sertifikuoti specialistai",
+    "certificate_alt": "Sertifikatas",
+    "machines": "Modernūs įrengimai",
+    "machines_alt": "Pramoniniai įrengimai",
+    "quality": "Garantuota kokybė",
+    "quality_alt": "Kokybė",
+    "results_title": "Mūsų rezultatai",
+    "projects_done": "Užbaigtų projektų",
+    "years_experience": "Metų patirtis",
+    "projects_ongoing": "Vykdomų projektų",
+    "happy_clients": "Laimingų klientų",
+    "quality_card_title": "Kokybė",
+    "quality_card_desc": "Naudojame tik aukščiausios kokybės medžiagas ir įrangą",
+    "reliability_card_title": "Patikimumas",
+    "reliability_card_desc": "Visada laikomės sutartų terminų ir įsipareigojimų",
+    "reliability_alt": "Patikimumas",
+    "innovation_card_title": "Inovacijos",
+    "innovation_card_desc": "Nuolat investuojame į naują technologijų ir metodų plėtrą",
+    "innovation_alt": "Inovacijos"
+  },
+
+  "footer": {
+    "description": "Profesionalūs suvirinimo sprendimai ir metalo konstrukcijų gamyba. Jau daugiau nei 2 metus teikiame aukščiausios kokybės paslaugas.",
+    "links_title": "Nuorodos",
+    "contacts_title": "Kontaktai",
+    "address": "J. Basanavičiaus g. 144a Šiauliai, Lietuva",
+    "copyright": "© 2025 Mandova. Visos teisės saugomos.",
+    "privacy_policy": "Privatumo politika"
+  },
+
+  "contacts":{
+      "lines_alt": "Dekoratyvinės linijos",
+      "title": "Susisiekite su mumis",
+      "subtitle": "Pasiruošę atsakyti į jūsų klausimus ir aptarti projektus",
+      "address_title": "Adresas",
+      "address_line1": "J. Basanavičiaus g. 144a",
+      "address_line2": "76128 Šiauliai, Lietuva",
+      "phone_title": "Telefonas",
+      "email_title": "El. paštas",
+      "email_note": "Atsakysime per 24 val.",
+      "map_title": "Kaip mus rasti",
+      "open_map": "Atidaryti žemėlapyje"
+  },
+  "gallery": {
+    "title": "Mūsų darbai",
+    "lines_alt": "Dekoratyvinės linijos",
+    "stalazas_dazyklai": "Stalažas dažyklai",
+    "aliuminis_ratas": "Automobilio aliuminis ratas",
+    "nerudijancio_konstrukcija": "Nerudyjančio plieno konstrukcija",
+    "surenkamos_lentynos": "Surenkamos lentynos",
+    "stumdomi_vartai": "Stumdomi vartai",
+    "close": "Uždaryti",
+    "prev": "Ankstesnis",
+    "next": "Kitas"
+  },
+
+  "privacy": {
+    "title": "Privatumo politika",
+    "intro": "Šioje privatumo politikoje (toliau - Privatumo politika) Jums pateikiame informaciją, kaip svetainės https://www.mandova.lt administracija (toliau - Duomenų valdytojas) tvarko Jūsų asmens duomenis, kai lankotės svetainėje https://www.mandova.lt.",
+    "contacts_title": "Duomenų valdytojo kontaktai",
+    "email": "El. paštas",
+    "phone": "Telefonas",
+    "address": "Adresas",
+    "data_title": "Kokius Jūsų asmens duomenis mes tvarkome?",
+    "data_intro": "Svetainė nerenka jokių tiesioginių duomenų, išskyrus tai, ką gali surinkti trečiosios šalys (Google, socialiniai tinklai).",
+    "third_party_title": "Trečiųjų šalių paslaugos",
+    "third_party_intro": "Svetainėje integruotas „Google Maps“ žemėlapis, kurį teikia „Google LLC“. Atidarant žemėlapį gali būti perduodama informacija, pvz., vartotojo IP adresas, naršyklės duomenys. Daugiau informacijos - ",
+    "google_policy": "„Google“ privatumo politikoje",
+    "social_title": "Kaip tvarkome Jūsų asmens duomenis socialiniuose tinkluose?",
+    "social_intro": "Duomenų valdytojas prižiūri ir administruoja šias oficialias paskyras socialiniuose tinkluose:",
+    "social_details": "Kai bendraujate su mumis šiose paskyrose - pavyzdžiui, rašote žinutę, komentuojate, spaudžiate „Patinka“ ar atliekate kitus veiksmus - mes galime matyti tam tikrą informaciją apie Jus: viešai matomą vartotojo vardą, komentarų ar žinučių turinį ir pan. Šiuos duomenis naudojame tam, kad galėtume atsakyti į Jūsų klausimus, reaguoti į atsiliepimus ar pateikti pasiūlymus.",
+    "social_joint": "Tokiu atveju duomenų tvarkymas vyksta bendro valdymo pagrindu, t. y. Jūsų duomenis kartu su mumis tvarko ir atitinkamas socialinio tinklo operatorius.",
+    "social_recommend": "Rekomenduojame susipažinti su atitinkamų platformų privatumo politikomis.",
+    "processing_title": "Kaip yra tvarkomi Jūsų asmens duomenys?",
+    "processing_law": "Jūsų asmens duomenys bus tvarkomi laikantis Bendrojo duomenų apsaugos reglamento (BDAR), Lietuvos Respublikos asmens duomenų teisinės apsaugos įstatymo, taip pat kitų galiojančių nacionalinių ir tarptautinių teisės aktų.",
+    "processing_principles": "Duomenys tvarkomi tik aiškiai apibrėžtais ir teisėtais tikslais, vadovaujantis mažiausios apimties, tikslumo, saugumo, saugojimo trukmės ribojimo bei atskaitomybės principais.",
+    "processing_security": "Naudojamos tinkamos techninės ir organizacinės priemonės, užtikrinančios Jūsų duomenų apsaugą nuo neteisėto ar atsitiktinio atskleidimo, pakeitimo, praradimo ar sunaikinimo.",
+    "rights_title": "Jūsų teisės",
+    "rights_info": "Gauti informaciją apie savo duomenų tvarkymą",
+    "rights_correct": "Reikalauti ištaisyti netikslius ar neišsamius duomenis",
+    "rights_delete": "Prašyti ištrinti savo duomenis („teisė būti pamirštam“)",
+    "rights_limit": "Apriboti duomenų tvarkymą",
+    "rights_port": "Gauti duomenis struktūrizuotu, dažnai naudojamu formatu („duomenų perkeliamumas“)",
+    "rights_object": "Nesutikti su duomenų tvarkymu (pvz., rinkodaros tikslais)",
+    "rights_withdraw": "Atšaukti sutikimą bet kuriuo metu",
+    "rights_how": "Šiomis teisėmis galite pasinaudoti kreipdamiesi į duomenų valdytoją el. paštu: info@mandova.lt",
+    "complaints_title": "Skundai",
+    "complaints_intro": "Jei manote, kad Jūsų, kaip duomenų subjekto, teisės buvo ar galėjo būti pažeistos, kviečiame pirmiausia kreiptis į mus šioje Privatumo politikoje nurodytais kontaktais. Gavę Jūsų užklausą ar skundą, imsimės veiksmų kuo greičiau - išnagrinėsime situaciją ir informuosime Jus apie nagrinėjimo eigą bei rezultatą.",
+    "complaints_next": "Jei mūsų atsakymas Jūsų netenkins arba manysite, kad klausimas neišspręstas tinkamai, turite teisę pateikti skundą ",
+    "complaints_link": "Valstybinei duomenų apsaugos inspekcijai",
+    "final_title": "Baigiamosios nuostatos",
+    "final_details": "Jūs atsakote už tai, kad mums pateikti asmens duomenys būtų tikslūs, aktualūs ir teisingi. Jei Jūsų duomenys pasikeičia, prašome nedelsti ir informuoti mus el. paštu, kad galėtume užtikrinti tinkamą jų tvarkymą. Mes neatsakome už galimus nuostolius ar nepatogumus, kurie gali kilti dėl to, kad pateikėte neteisingą, neišsamią ar pasenusią informaciją, arba nepranešėte apie jos pasikeitimus.",
+    "final_update": "Mes pasiliekame teisę bet kada atnaujinti ar pakeisti šią privatumo politiką. Atnaujinimai įsigalioja nuo jų paskelbimo svetainėje dienos, nebent nurodyta kitaip.",
+    "last_updated": "Paskutinį kartą atnaujinta: 2025-08-19",
+    "copyright": "Šios privatumo politikos turinys yra „dokumentai24.lt“ intelektinė nuosavybė ir saugomas autorių teisių. Be raštiško sutikimo draudžiama kopijuoti, platinti ar kitaip naudoti visą dokumentą ar jo dalis. Naudojimo teisė suteikta svetainei https://www.mandova.lt."
+  },
+
+  "notfound": {
+    "linesAlt": "Dekoratyvinės linijos",
+    "title": "Puslapis",
+    "titleHighlight": "nerastas",
+    "description1": "Atsiprašome, bet ieškomas puslapis neegzistuoja arba buvo perkeltas.",
+    "description2": "Patikrinkite URL adresą arba grįžkite į pagrindinį puslapį.",
+    "backHome": "Grįžti į pradžią",
+    "contactUs": "Susisiekti su mumis",
+    "needHelp": "Reikia pagalbos? Susisiekite su mumis:"
+  }
+}

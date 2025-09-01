@@ -1,5 +1,6 @@
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from "ogl";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
+import { useTranslation } from 'react-i18next';
 import dazyklos_kabykla2 from '../assets/Gallery/dazyklos kabykla2.webp';
 import dazyklos_kabykla3 from '../assets/Gallery/dazyklos kabykla3.webp';
 import letnykas1 from '../assets/Gallery/letnykas1.webp';
@@ -297,6 +298,7 @@ class App {
       font = "bold 30px Figtree",
       scrollSpeed = 2,
       scrollEase = 0.05,
+      t
     } = {}
   ) {
     document.documentElement.classList.remove("no-js");
@@ -304,6 +306,7 @@ class App {
     this.scrollSpeed = scrollSpeed;
     this.scroll = { ease: scrollEase, current: 0, target: 0, last: 0 };
     this.onCheckDebounce = debounce(this.onCheck, 200);
+    this.t = t;
     this.createRenderer();
     this.createCamera();
     this.createScene();
@@ -338,18 +341,20 @@ class App {
       widthSegments: 100,
     });
   }
+
   createMedias(items, bend = 1, textColor, borderRadius, font) {
+    const t = this.t;
     const defaultItems = [
-      { image: dazyklos_kabykla2, text: "Stalažas dažyklai" },
-      { image: dazyklos_kabykla3, text: "Stalažas dažyklai" },
-      { image: letnykas1, text: "Automobilio aliuminis ratas" },
-      { image: letnykas2, text: "Automobilio aliuminis ratas" },
-      { image: nerza, text: "Nerudyjančio plieno konstrukcija" },
-      { image: surenkamos_lentynos1, text: "Surenkamos lentynos" },
-      { image: surenkamos_lentynos2, text: "Surenkamos lentynos" },
-      { image: vartai, text: "Stumdomi vartai" },
-      { image: vartai190, text: "Stumdomi vartai" },
-      { image: vartai190_2, text: "Stumdomi vartai" },
+      { image: dazyklos_kabykla2, text: t('gallery.stalazas_dazyklai') },
+      { image: dazyklos_kabykla3, text: t('gallery.stalazas_dazyklai') },
+      { image: letnykas1, text: t('gallery.aliuminis_ratas') },
+      { image: letnykas2, text: t('gallery.aliuminis_ratas') },
+      { image: nerza, text: t('gallery.nerudijancio_konstrukcija') },
+      { image: surenkamos_lentynos1, text: t('gallery.surenkamos_lentynos') },
+      { image: surenkamos_lentynos2, text: t('gallery.surenkamos_lentynos') },
+      { image: vartai, text: t('gallery.stumdomi_vartai') },
+      { image: vartai190, text: t('gallery.stumdomi_vartai') },
+      { image: vartai190_2, text: t('gallery.stumdomi_vartai') },
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);
@@ -474,21 +479,27 @@ export default function CircularGallery({
   const [modalVisible, setModalVisible] = useState(false);
   const dragStartPos = useRef({ x: 0, y: 0 });
 
-  const galleryItems = items && items.length ? items : [
-    { image: dazyklos_kabykla2, text: "Stalažas dažyklai" },
-    { image: dazyklos_kabykla3, text: "Stalažas dažyklai" },
-    { image: letnykas1, text: "Automobilio aliuminis ratas" },
-    { image: letnykas2, text: "Automobilio aliuminis ratas" },
-    { image: nerza, text: "Nerudyjančio plieno konstrukcija" },
-    { image: surenkamos_lentynos1, text: "Surenkamos lentynos" },
-    { image: surenkamos_lentynos2, text: "Surenkamos lentynos" },
-    { image: vartai, text: "Stumdomi vartai" },
-    { image: vartai190, text: "Stumdomi vartai" },
-    { image: vartai190_2, text: "Stumdomi vartai" },
-  ];
+  const { t } = useTranslation();
+  const galleryItems = useMemo(() => {
+    if (items && items.length) {
+      return items.map(item => ({ ...item, text: t(item.text) }));
+    }
+    return [
+      { image: dazyklos_kabykla2, text: t('gallery.stalazas_dazyklai') },
+      { image: dazyklos_kabykla3, text: t('gallery.stalazas_dazyklai') },
+      { image: letnykas1, text: t('gallery.aliuminis_ratas') },
+      { image: letnykas2, text: t('gallery.aliuminis_ratas') },
+      { image: nerza, text: t('gallery.nerudijancio_konstrukcija') },
+      { image: surenkamos_lentynos1, text: t('gallery.surenkamos_lentynos') },
+      { image: surenkamos_lentynos2, text: t('gallery.surenkamos_lentynos') },
+      { image: vartai, text: t('gallery.stumdomi_vartai') },
+      { image: vartai190, text: t('gallery.stumdomi_vartai') },
+      { image: vartai190_2, text: t('gallery.stumdomi_vartai') },
+    ];
+  }, [t, items]);
 
   useEffect(() => {
-    const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase });
+    const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase, t });
     const canvas = containerRef.current?.querySelector('canvas');
     function onStart(e) {
       let point = null;
@@ -540,7 +551,7 @@ export default function CircularGallery({
         canvas.removeEventListener('touchend', onStop);
       }
     };
-  }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase, galleryItems.length]);
+  }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase, galleryItems.length, t]);
 
   function handleCloseModal() {
     setModalVisible(false);
@@ -566,7 +577,7 @@ export default function CircularGallery({
               className="absolute top-2 right-2 text-orange text-3xl font-bold rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
               style={{ color: '#ff9900' }}
               onClick={handleCloseModal}
-              aria-label="Uždaryti"
+              aria-label={t('gallery.close')}
             >
               &#10005;
             </button>
@@ -575,7 +586,7 @@ export default function CircularGallery({
               className="cursor-pointer text-orange absolute left-2 top-1/2 transform -translate-y-1/2 text-3xl font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-opacity-100 z-10"
               style={{ left: 0 }}
               onClick={() => setModalIdx((modalIdx - 1 + galleryItems.length) % galleryItems.length)}
-              aria-label="Ankstesnis"
+              aria-label={t('gallery.prev')}
             >
               <span className="material-icons" style={{ fontSize: '2.2rem', color: '#ff9900' }}>arrow_back_ios_new</span>
             </button>
@@ -584,7 +595,7 @@ export default function CircularGallery({
               className="cursor-pointer text-orange absolute right-2 top-1/2 transform -translate-y-1/2 text-3xl font-bold  rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-opacity-100 z-10"
               style={{ right: 0 }}
               onClick={() => setModalIdx((modalIdx + 1) % galleryItems.length)}
-              aria-label="Kitas"
+              aria-label={t('gallery.next')}
             >
               <span className="material-icons" style={{ fontSize: '2.2rem', color: '#ff9900' }}>arrow_forward_ios</span>
             </button>
