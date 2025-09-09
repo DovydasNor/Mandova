@@ -31,9 +31,9 @@ const Contacts = () => {
               {t('contacts.title')}
             </h1>
             <div className="w-24 h-1 bg-mandova mx-auto mb-8"></div>
-            <p className="text-xl text-orange max-w-3xl mx-auto">
+            <h2 className="text-xl text-orange max-w-3xl mx-auto drop-shadow-[0_1.2px_1.2px_hex(0,0,0,0.8)]">
               {t('contacts.subtitle')}
-            </p>
+            </h2>
           </div>
           <div className="grid lg:grid-cols-2 gap-16">
             <div className="space-y-12">
@@ -94,7 +94,7 @@ const Contacts = () => {
                   href="https://maps.google.com/?q=J.+Basanavičiaus+g.+144a,+76128+Šiauliai,+Lietuva"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-mandova hover:bg-mandova-dark text-white px-6 py-3 rounded-lg transition-colors duration-300 inline-block"
+                  className="bg-mandova hover:bg-mandova-dark text-texts hover:text-zinc-800 px-6 py-3 rounded-lg transition-colors duration-300 inline-block font-bold"
                 >
                   {t('contacts.open_map')}
                 </a>
