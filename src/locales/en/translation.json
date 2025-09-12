@@ -6,7 +6,8 @@
   "header": {
     "about": "About Us",
     "gallery": "Gallery",
-    "contacts": "Contacts"
+    "contacts": "Contacts",
+    "reviews": "Reviews"
   },
   "hero": {
     "title": "Quality welding, impressive results",
@@ -145,5 +146,9 @@
     "backHome": "Back to Home",
     "contactUs": "Contact Us",
     "needHelp": "Need help? Contact us:"
+  },
+  "reviews": {
+    "write_review": "Write a Review",
+    "close": "Close"
   }
 }

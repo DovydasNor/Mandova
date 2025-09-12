@@ -8,7 +8,6 @@ import CountUp from './CountUp';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-
 const AboutUs = () => {
   const { t } = useTranslation();
   return (

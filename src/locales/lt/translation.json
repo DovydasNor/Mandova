@@ -6,7 +6,8 @@
   "header": {
     "about": "Apie mus",
     "gallery": "Darbų galerija",
-    "contacts": "Kontaktai"
+    "contacts": "Kontaktai",
+    "reviews": "Atsiliepimai"
   },
   "hero": {
     "title": "Kokybiškas suvirinimas, džiuginantys rezultatai",
@@ -145,5 +146,9 @@
     "backHome": "Grįžti į pradžią",
     "contactUs": "Susisiekti su mumis",
     "needHelp": "Reikia pagalbos? Susisiekite su mumis:"
+  },
+  "reviews": {
+    "write_review": "Parašyti atsiliepimą",
+    "close": "Uždaryti"
   }
 }

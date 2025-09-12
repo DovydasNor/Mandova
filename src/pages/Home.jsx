@@ -3,6 +3,8 @@ import AboutUs from "../components/AboutUs.jsx"
 import Services from "../components/Services.jsx"
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import GoogleReviews from "../components/GoogleReviews.jsx";
+import ReviewsForm from "../components/ReviewsForm.jsx";
 
 const Home = () => {
 
@@ -22,6 +24,8 @@ const Home = () => {
       <Hero />
       <Services />
       <AboutUs />
+      <GoogleReviews />
+      <ReviewsForm />
     </>
   )
 }
