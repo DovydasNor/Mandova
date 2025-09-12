@@ -51,7 +51,7 @@ const Header = () => {
         </NavLink>
 
         <div className="text-orange font-bold text-lg lg:text-xl">
-          \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+          \\\\\\\\\\\\\\\\\\\\\\\\
         </div>
 
         <div>
@@ -81,6 +81,12 @@ const Header = () => {
                 className="hover:text-orange transition-colors cursor-pointer text-texts text-lg lg:text-xl font-medium">
                 {t('header.contacts')}
               </NavLink>
+            </li>
+            <li>
+              <a href="#reviews"
+                className="hover:text-orange transition-colors cursor-pointer text-texts text-lg lg:text-xl font-medium">
+                {t('header.reviews')}
+              </a>
             </li>
           </ul>
         </div>
