@@ -149,6 +149,12 @@ const Header = () => {
                     {t('header.contacts')}
                   </NavLink>
                 </li>
+                <li>
+                  <a href="#reviews"
+                    className="hover:text-orange transition-colors cursor-pointer text-texts text-lg lg:text-xl font-medium">
+                    {t('header.reviews')}
+                  </a>
+              </li>
               </ul>
             </nav>
           </div>
