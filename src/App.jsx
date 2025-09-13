@@ -7,6 +7,7 @@ import Contacts from './pages/Contacts';
 import NotFoundPage from './pages/404_Page';
 import Footer from './components/Footer';
 import PrivacyPolicy from './pages/privacy_policy';
+import BackToTopButton from './components/BackToTopButton';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/privacy_policy" element={<PrivacyPolicy />} />
       </Routes>
+      <BackToTopButton />
       <Footer />
     </>
   )

@@ -93,7 +93,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-800 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-col justify-center items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               {t('footer.copyright')}
             </p>

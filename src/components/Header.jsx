@@ -33,8 +33,16 @@ const Header = () => {
     }
   }
 
-  const handleNavClick = () => {
-    setIsMenuOpen(false)
+  const handleReviewsClick = (e) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    if (location.pathname !== '/' && location.pathname !== '/Home') {
+      window.location.href = '/#reviews';
+      window.localStorage.setItem('scrollToReviews', 'true');
+    } else {
+      scrollToElement('reviews');
+      if (window.openReviewFormModal) window.openReviewFormModal();
+    }
   }
 
   return (
@@ -83,7 +91,9 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <a href="#reviews"
+              <a
+                href="#reviews"
+                onClick={handleReviewsClick}
                 className="hover:text-orange transition-colors cursor-pointer text-texts text-lg lg:text-xl font-medium">
                 {t('header.reviews')}
               </a>
@@ -136,7 +146,6 @@ const Header = () => {
                 <li>
                   <NavLink
                     to="/Gallery"
-                    onClick={handleNavClick}
                     className="block py-2 hover:text-orange transition-colors cursor-pointer text-texts text-lg font-medium">
                     {t('header.gallery')}
                   </NavLink>
@@ -144,13 +153,14 @@ const Header = () => {
                 <li>
                   <NavLink
                     to="/Contacts"
-                    onClick={handleNavClick}
                     className="block py-2 hover:text-orange transition-colors cursor-pointer text-texts text-lg font-medium">
                     {t('header.contacts')}
                   </NavLink>
                 </li>
                 <li>
-                  <a href="#reviews"
+                  <a
+                    href="#reviews"
+                    onClick={handleReviewsClick}
                     className="hover:text-orange transition-colors cursor-pointer text-texts text-lg lg:text-xl font-medium">
                     {t('header.reviews')}
                   </a>
