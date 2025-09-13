@@ -20,7 +20,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://www.facebook.com/MBmandova"
+                href="https://www.facebook.com/people/Mandova/61581031852027/"
                 target='_blank'
                 className="text-gray-400 hover:text-mandova transition-colors duration-300"
                 aria-label="Facebook link"
