@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 const ReviewsForm = () => {
     const [visible, setVisible] = useState(false);
     const { t } = useTranslation();
+
     useEffect(() => {
         if (!document.getElementById('shapo-embed-js')) {
             const script = document.createElement('script');
@@ -11,6 +12,13 @@ const ReviewsForm = () => {
             script.src = 'https://cdn.shapo.io/js/embed.js';
             script.defer = true;
             document.body.appendChild(script);
+        }
+        if (window.localStorage.getItem('scrollToReviews') === 'true') {
+            window.localStorage.removeItem('scrollToReviews');
+            setTimeout(() => {
+                const el = document.getElementById('reviews');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 300);
         }
     }, []);
 
