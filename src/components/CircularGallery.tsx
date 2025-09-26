@@ -1,6 +1,8 @@
+// @ts-nocheck
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from "ogl";
-import { useEffect, useRef, useState, useMemo } from "react";
 import { useTranslation } from 'react-i18next';
+import LazyImage from './LazyImage';
 import dazyklos_kabykla2 from '../assets/Gallery/dazyklos kabykla2.webp';
 import dazyklos_kabykla3 from '../assets/Gallery/dazyklos kabykla3.webp';
 import letnykas1 from '../assets/Gallery/letnykas1.webp';
@@ -12,19 +14,19 @@ import vartai from '../assets/Gallery/vartai.webp';
 import vartai190 from '../assets/Gallery/vartai190.webp';
 import vartai190_2 from '../assets/Gallery/vartai190_2.webp';
 
-function debounce(func, wait) {
-  let timeout;
-  return function (...args) {
+function debounce(func: (...args: any[]) => void, wait: number): (...args: any[]) => void {
+  let timeout: NodeJS.Timeout | undefined;
+  return function (this: any, ...args: any[]) {
     clearTimeout(timeout);
     timeout = setTimeout(() => func.apply(this, args), wait);
   };
 }
 
-function lerp(p1, p2, t) {
+function lerp(p1: number, p2: number, t: number): number {
   return p1 + (p2 - p1) * t;
 }
 
-function autoBind(instance) {
+function autoBind(instance: any): void {
   const proto = Object.getPrototypeOf(instance);
   Object.getOwnPropertyNames(proto).forEach((key) => {
     if (key !== "constructor" && typeof instance[key] === "function") {
@@ -33,9 +35,10 @@ function autoBind(instance) {
   });
 }
 
-function createTextTexture(gl, text, font = "bold 30px monospace", color = "black") {
+function createTextTexture(gl: any, text: string, font = "bold 30px monospace", color = "black"): any {
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
+  if (!context) throw new Error("Could not get 2d context");
   context.font = font;
   const metrics = context.measureText(text);
   const textWidth = Math.ceil(metrics.width);
@@ -465,7 +468,7 @@ class App {
 }
 
 export default function CircularGallery({
-  items,
+  items = null,
   bend = 3,
   textColor = "#ffffff",
   borderRadius = 0.05,
@@ -499,7 +502,7 @@ export default function CircularGallery({
   }, [t, items]);
 
   useEffect(() => {
-    const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase, t });
+    const app = new App(containerRef.current, { items: galleryItems, bend, textColor, borderRadius, font, scrollSpeed, scrollEase, t });
     const canvas = containerRef.current?.querySelector('canvas');
     function onStart(e) {
       let point = null;
@@ -599,7 +602,13 @@ export default function CircularGallery({
             >
               <span className="material-icons" style={{ fontSize: '2.2rem', color: '#ff9900' }}>arrow_forward_ios</span>
             </button>
-            <img src={galleryItems[modalIdx].image} alt={galleryItems[modalIdx].text} className="w-full h-auto rounded mb-4" style={{maxHeight: '90vh', width: 'auto', maxWidth: '90vw'}} />
+            <LazyImage 
+              src={galleryItems[modalIdx].image} 
+              alt={galleryItems[modalIdx].text} 
+              className="w-full h-auto rounded mb-4" 
+              style={{maxHeight: '90vh', width: 'auto', maxWidth: '90vw'}}
+              placeholder={<div className="w-full h-64 bg-gray-200 animate-pulse mb-4 rounded"></div>}
+            />
             <span className="block text-xl font-bold text-orange mb-2 text-center drop-shadow-lg">{galleryItems[modalIdx].text}</span>
           </div>
         </div>

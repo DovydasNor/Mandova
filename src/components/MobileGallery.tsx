@@ -1,6 +1,8 @@
+// @ts-nocheck
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from "ogl";
-import { useEffect, useRef, useState, useMemo } from "react";
 import { useTranslation } from 'react-i18next';
+import LazyImage from './LazyImage';
 import dazyklos_kabykla2 from '../assets/Gallery/dazyklos kabykla2.webp';
 import dazyklos_kabykla3 from '../assets/Gallery/dazyklos kabykla3.webp';
 import letnykas1 from '../assets/Gallery/letnykas1.webp';
@@ -302,11 +304,13 @@ class App {
       font = "bold 30px Figtree",
       scrollSpeed = 2,
       scrollEase = 0.05,
+      t = (key) => key,
     } = {}
   ) {
     document.documentElement.classList.remove("no-js");
     this.container = container;
     this.scrollSpeed = scrollSpeed;
+    this.t = t;
     this.scroll = { ease: scrollEase, current: 0, target: 0, last: 0 };
     this.onCheckDebounce = debounce(this.onCheck, 200);
     this.createRenderer();
@@ -343,17 +347,18 @@ class App {
     });
   }
   createMedias(items, bend = 0, textColor, borderRadius, font) {
+    const t = this.t || ((key) => key);
     const defaultItems = [
-            { image: dazyklos_kabykla2, text: "Stalažas dažyklai" },
-            { image: dazyklos_kabykla3, text: "Stalažas dažyklai" },
-            { image: letnykas1, text: "Automobilio aliuminis ratas" },
-            { image: letnykas2, text: "Automobilio aliuminis ratas" },
-            { image: nerza, text: "Nerudyjančio plieno konstrukcija" },
-            { image: surenkamos_lentynos1, text: "Surenkamos lentynos" },
-            { image: surenkamos_lentynos2, text: "Surenkamos lentynos" },
-            { image: vartai, text: "Stumdomi vartai" },
-            { image: vartai190, text: "Stumdomi vartai" },
-            { image: vartai190_2, text: "Stumdomi vartai" },
+            { image: dazyklos_kabykla2, text: t('gallery.stalazas_dazyklai') },
+            { image: dazyklos_kabykla3, text: t('gallery.stalazas_dazyklai') },
+            { image: letnykas1, text: t('gallery.aliuminis_ratas') },
+            { image: letnykas2, text: t('gallery.aliuminis_ratas') },
+            { image: nerza, text: t('gallery.nerudijancio_konstrukcija') },
+            { image: surenkamos_lentynos1, text: t('gallery.surenkamos_lentynos') },
+            { image: surenkamos_lentynos2, text: t('gallery.surenkamos_lentynos') },
+            { image: vartai, text: t('gallery.stumdomi_vartai') },
+            { image: vartai190, text: t('gallery.stumdomi_vartai') },
+            { image: vartai190_2, text: t('gallery.stumdomi_vartai') },
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);
@@ -464,7 +469,7 @@ class App {
 }
 
 export default function CircularGallery({
-  items,
+  items = null,
   bend = 0,
   textColor = "#ffffff",
   borderRadius = 0.05,
@@ -478,7 +483,7 @@ export default function CircularGallery({
   
   const [modalVisible, setModalVisible] = useState(false);
   useEffect(() => {
-    const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase });
+    const app = new App(containerRef.current, { items: galleryItems, bend, textColor, borderRadius, font, scrollSpeed, scrollEase, t });
     const canvas = containerRef.current?.querySelector('canvas');
     if (canvas) {
       canvas.addEventListener('click', () => {
@@ -574,7 +579,13 @@ export default function CircularGallery({
               >
                 &#10005;
               </button>
-              <img src={galleryItems[modalIdx].image} alt={galleryItems[modalIdx].text} className="w-full h-auto mb-4" style={{maxHeight: '70vh', borderRadius: '1rem'}} />
+              <LazyImage 
+                src={galleryItems[modalIdx].image} 
+                alt={galleryItems[modalIdx].text} 
+                className="w-full h-auto mb-4" 
+                style={{maxHeight: '70vh', borderRadius: '1rem'}}
+                placeholder={<div className="w-full h-64 bg-gray-200 animate-pulse mb-4 rounded-lg"></div>}
+              />
               <span className="block text-xl font-bold text-orange mb-2 text-center drop-shadow-lg">{galleryItems[modalIdx].text}</span>
             </div>
           </div>

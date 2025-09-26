@@ -1,7 +1,20 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useInView, useMotionValue, useSpring } from "motion/react";
 
-export default function CountUp({
+interface CountUpProps {
+  to: number;
+  from?: number;
+  direction?: "up" | "down";
+  delay?: number;
+  duration?: number;
+  className?: string;
+  startWhen?: boolean;
+  separator?: string;
+  onStart?: () => void;
+  onEnd?: () => void;
+}
+
+const CountUp: React.FC<CountUpProps> = ({
   to,
   from = 0,
   direction = "up",
@@ -12,8 +25,8 @@ export default function CountUp({
   separator = "",
   onStart,
   onEnd,
-}) {
-  const ref = useRef(null);
+}) => {
+  const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(direction === "down" ? to : from);
 
   const damping = 20 + 40 * (1 / duration);
@@ -26,7 +39,7 @@ export default function CountUp({
 
   const isInView = useInView(ref, { once: true, margin: "0px" });
 
-  const getDecimalPlaces = (num) => {
+  const getDecimalPlaces = (num: number): number => {
     const str = num.toString();
 
     if (str.includes(".")) {
@@ -68,6 +81,7 @@ export default function CountUp({
         clearTimeout(durationTimeoutId);
       };
     }
+    return undefined;
   }, [
     isInView,
     startWhen,
@@ -106,4 +120,6 @@ export default function CountUp({
   }, [springValue, separator, maxDecimals]);
 
   return <span className={className} ref={ref} />;
-}
+};
+
+export default CountUp;

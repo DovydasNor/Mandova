@@ -3,14 +3,26 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=22.20.0",
+    "bun": ">=1.1.0"
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "bunx vite",
+    "build": "bunx vite build",
+    "lint": "bunx eslint .",
+    "preview": "bunx vite preview",
+    "install:clean": "bun install --force",
+    "dev:turbo": "bunx vite --host 0.0.0.0",
+    "bun:update": "bun update",
+    "bun:audit": "bun pm audit",
+    "bun:clean": "bun pm cache rm && bun install",
+    "test": "bun test",
+    "type-check": "bunx tsc --noEmit"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
+    "framer-motion": "12.23.22",
     "i18next": "^25.4.2",
     "motion": "^12.23.12",
     "ogl": "^1.0.11",
@@ -21,8 +33,9 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
-    "@types/react": "^19.1.9",
-    "@types/react-dom": "^19.1.7",
+    "@types/node": "^22",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^4.7.0",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.32.0",
@@ -31,6 +44,7 @@
     "globals": "^16.3.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11",
+    "typescript": "^5.9.2",
     "vite": "^7.1.0"
   }
 }

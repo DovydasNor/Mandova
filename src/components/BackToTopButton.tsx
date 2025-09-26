@@ -1,7 +1,7 @@
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const BackToTopButton = () => {
+const BackToTopButton: React.FC = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {

@@ -1,13 +1,32 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
-import lines from '../assets/lines.webp'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { usePageNotFound } from '../hooks/usePageNotFound';
+import lines from '../assets/lines.webp';
 
-
-const NotFoundPage = () => {
+const NotFoundPage: React.FC = () => {
   const { t } = useTranslation();
+
+  usePageNotFound(`404 - ${t('notfound.title')} | Mandova`);
+
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "404 - Page Not Found",
+          "description": "The requested page could not be found on Mandova website.",
+          "url": window.location.href,
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Mandova",
+            "url": "https://mandova.lt"
+          }
+        })}
+      </script>
+      
       <img 
         src={lines}
         alt={t('notfound.linesAlt')}
@@ -38,8 +57,8 @@ const NotFoundPage = () => {
               {t('notfound.backHome')}
             </Link>
             <Link 
-              to="/kontaktai"
-              className="border-2 border-mandova text-mandova hover:bg-mandova hover:text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300"
+              to="/Contacts"
+              className="bg-orange hover:bg-orange/80 text-white border-2 border-orange font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               {t('notfound.contactUs')}
             </Link>
@@ -48,13 +67,23 @@ const NotFoundPage = () => {
             <p>{t('notfound.needHelp')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-4">
               <a 
-                href="tel:+37060000000" 
+                href="tel:+37062223642" 
                 className="flex items-center space-x-2 hover:text-mandova transition-colors"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                 </svg>
-                <span>+370 600 00000</span>
+                <span>+370 622 23642</span>
+              </a>
+              
+              <a 
+                href="tel:+37065399915" 
+                className="flex items-center space-x-2 hover:text-mandova transition-colors"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
+                <span>+370 653 99915</span>
               </a>
               <a 
                 href="mailto:info@mandova.lt" 

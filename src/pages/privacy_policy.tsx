@@ -1,10 +1,30 @@
 
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { usePageMeta } from '../hooks/usePageMeta';
+import SchemaMarkup from '../components/SchemaMarkup';
+import { generateBreadcrumbSchema } from '../utils/schemaMarkup';
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy: React.FC = () => {
   const { t } = useTranslation();
+
+  usePageMeta({
+    title: 'Privatumo politika - Mandova duomenų apsauga ir privatumas',
+    description: 'Mandova privatumo politika - sužinokite, kaip renkame, naudojame ir saugome jūsų asmens duomenis. BDAR atitikties informacija ir jūsų teisės.',
+    keywords: 'privatumo politika, duomenų apsauga, BDAR, asmens duomenų tvarkymas, Mandova',
+    canonical: 'https://mandova.lt/privacy_policy',
+    ogImage: 'https://mandova.lt/src/assets/Mandova_logo_trans.webp',
+    ogType: 'article'
+  });
+
+  const breadcrumbItems = [
+    { name: 'Pagrindinis', url: 'https://mandova.lt/' },
+    { name: 'Privatumo politika', url: 'https://mandova.lt/privacy_policy' }
+  ];
+
   return (
     <div className="privacy-policy-container text-xl text-white" style={{ padding: "2rem", maxWidth: "800px", margin: "0 auto" }}>
+      <SchemaMarkup schema={generateBreadcrumbSchema(breadcrumbItems)} id="breadcrumb-schema" />
       <h1 className="text-3xl font-bold mb-6">{t('privacy.title')}</h1>
       <p>{t('privacy.intro')}</p>
       <h2 className="text-2xl font-semibold mt-8 mb-2">{t('privacy.contacts_title')}</h2>
