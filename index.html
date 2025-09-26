@@ -1,24 +1,50 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Cookiebot CMP - Must be loaded first for proper consent management -->
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="96873d7c-e8cf-4a2b-9a8d-8b811dd351da" data-blockingmode="auto" type="text/javascript"></script>
+    
+    <!-- Google Consent Mode - Initialize with default denied state -->
+    <script data-cookieconsent="ignore">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      
+      // Set default consent to denied
+      gtag('consent', 'default', {
+        ad_personalization: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'denied',
+        personalization_storage: 'denied',
+        security_storage: 'granted',
+        wait_for_update: 500,
+      });
+      
+      gtag('set', 'ads_data_redirection', true);
+      gtag('set', 'url_passthrough', false);
+    </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRBWN24PNR"></script>
-    <script>
+    <!-- Google Tag Manager - Will be controlled by consent -->
+    <script data-cookieconsent="statistics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N29WNW7M');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Analytics - Consent controlled -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRBWN24PNR" data-cookieconsent="statistics"></script>
+    <script data-cookieconsent="statistics">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
-      gtag('config', 'G-GRBWN24PNR');
+      gtag('config', 'G-GRBWN24PNR', {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        cookie_flags: 'secure;samesite=none'
+      });
     </script>
-
-    <!-- Google Tag Manager -->
-      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-N29WNW7M');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="description" content="Mandova – profesionalūs suvirinimo darbai, metalo konstrukcijos pagal užsakymą. Kokybė, tikslumas ir patikimumas. Susisiekite su mumis jau šiandien.">
     <meta name="keywords" content="suvirinimo darbai, metalo konstrukcijos, metalo apdirbimas, suvirinimas, Mandova, Lietuva">
@@ -59,8 +85,6 @@
     <!-- Preload critical assets -->
     <link rel="preload" href="/src/assets/welding-work-with-metal-construction-busy-metal-factory.webp" as="image" type="image/webp" fetchpriority="high">
     <link rel="preload" href="/src/assets/Mandova_logo_trans.webp" as="image" type="image/webp">
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="96873d7c-e8cf-4a2b-9a8d-8b811dd351da" data-blockingmode="auto" type="text/javascript"></script>
-    <script data-cookieconsent="ignore">    window.dataLayer = window.dataLayer || [];    function gtag() {        dataLayer.push(arguments);    }    gtag("consent", "default", {        ad_personalization: "denied",        ad_storage: "denied",        ad_user_data: "denied",        analytics_storage: "denied",        functionality_storage: "denied",        personalization_storage: "denied",        security_storage: "granted",        wait_for_update: 500,    });    gtag("set", "ads_data_redaction", true);    gtag("set", "url_passthrough", false);</script>
     <script id="CookieDeclaration" src="https://consent.cookiebot.com/96873d7c-e8cf-4a2b-9a8d-8b811dd351da/cd.js" type="text/javascript" async></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Syne:wght@400..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -72,6 +96,39 @@
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N29WNW7M"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Cookiebot Consent Integration -->
+    <script data-cookieconsent="ignore">
+      window.addEventListener('CookiebotOnAccept', function (e) {
+        if (Cookiebot.consent.statistics) {
+          gtag('consent', 'update', {
+            analytics_storage: 'granted'
+          });
+        }
+        if (Cookiebot.consent.marketing) {
+          gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted'
+          });
+        }
+      }, false);
+
+      window.addEventListener('CookiebotOnDecline', function (e) {
+        gtag('consent', 'update', {
+          analytics_storage: 'denied',
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied'
+        });
+      }, false);
+
+      window.addEventListener('CookiebotOnDialogInit', function (e) {
+        // Called when the dialog is initialized
+        console.log('Cookiebot dialog initialized');
+      }, false);
+    </script>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
