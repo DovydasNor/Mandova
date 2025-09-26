@@ -1,7 +1,10 @@
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const flags = {
+type SupportedLanguages = 'lt' | 'en';
+
+const flags: Record<SupportedLanguages, React.JSX.Element> = {
   lt: 
   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
       <path fill="#2d6946" d="M1 11H31V21H1z"></path>
@@ -44,15 +47,24 @@ const flags = {
   </svg>,
 };
 
-const LanguageSwitcher = () => {
+const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();
-  const currentLang = i18n.language;
-  const [open, setOpen] = useState(false);
-  const dropdownRef = useRef(null);
+  const currentLang = i18n.language as SupportedLanguages;
+  const [open, setOpen] = useState<boolean>(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleLanguageChange = async (language: SupportedLanguages): Promise<void> => {
+    
+    localStorage.setItem('selectedLanguage', language);
+    
+    document.documentElement.lang = language === 'lt' ? 'lt' : 'en';
+    
+    window.location.reload();
+  };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent): void => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setOpen(false);
       }
     };
@@ -66,35 +78,92 @@ const LanguageSwitcher = () => {
 
   return (
     <div className="relative inline-block" ref={dropdownRef}>
-      <button
-        className="w-9 h-9 flex items-center justify-center rounded-full shadow cursor-pointer text-2xl"
+      <motion.button
+        className="flex items-center justify-center gap-1 px-2 py-2 rounded-full shadow cursor-pointer text-2xl hover:bg-mandova/10 transition-colors"
         onClick={() => setOpen((o) => !o)}
         aria-label="Select language"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       >
-        {flags[currentLang] || '🌐'}
-      </button>
-      {open && (
-        <div className="absolute right-0 mt-2 w-20 rounded shadow-lg z-50 flex flex-col align-middle">
-        <button
-          className={`cursor-pointer w-full h-10 flex items-center justify-center text-2xl rounded hover:bg-mandova/10 transition-colors ${currentLang === 'lt' ? 'opacity-60 cursor-default' : ''}`}
-          onClick={() => { i18n.changeLanguage('lt'); setOpen(false); }}
-          disabled={currentLang === 'lt'}
-          aria-label="Lietuvių"
+        <motion.span 
+          className="w-8 h-8 flex items-center justify-center"
+          key={currentLang}
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.3 }}
         >
-          {flags.lt}
-          <span className='text-xs text-white font-bold ml-0.5'>Lietuvių</span>
-        </button>
-        <button
-          className={`cursor-pointer w-full h-10 flex items-center justify-center text-2xl rounded hover:bg-mandova/10 transition-colors ${currentLang === 'en' ? 'opacity-60 cursor-default' : ''}`}
-          onClick={() => { i18n.changeLanguage('en'); setOpen(false); }}
-          disabled={currentLang === 'en'}
-          aria-label="English"
+          {flags[currentLang] || '🌐'}
+        </motion.span>
+        <motion.svg 
+          className="w-5 h-5 text-orange"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          viewBox="0 0 24 24"
+          animate={{ rotate: open ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
         >
-          {flags.en}
-          <span className='text-xs text-white font-bold ml-0.5'>English</span>
-        </button>
-        </div>
-      )}
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </motion.svg>
+      </motion.button>
+      <AnimatePresence>
+        {open && (
+          <motion.div 
+            className="absolute right-0 mt-2 px-1 w-20 rounded shadow-lg z-50 flex flex-col align-middle bg-background backdrop-blur-sm"
+            initial={{ opacity: 0, scale: 0.95, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -10 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+            <motion.button
+              className={`cursor-pointer w-full h-10 flex items-center justify-center text-2xl rounded transition-colors ${currentLang === 'lt' ? 'opacity-60 cursor-default' : ''}`}
+              onClick={() => { 
+                setOpen(false); 
+                handleLanguageChange('lt');
+              }}
+              disabled={currentLang === 'lt'}
+              aria-label="Lietuvių"
+              whileHover={currentLang !== 'lt' ? { scale: 1.05 } : {}}
+              whileTap={currentLang !== 'lt' ? { scale: 0.95 } : {}}
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.05 }}
+            >
+              {flags.lt}
+              <motion.span 
+                className='text-xs text-white font-bold ml-0.5'
+                whileHover={currentLang !== 'lt' ? { color: "#ff8c00", scale: 1.1 } : {}}
+                transition={{ duration: 0.2 }}
+              >
+                Lietuvių
+              </motion.span>
+            </motion.button>
+            <motion.button
+              className={`cursor-pointer w-full h-10 flex items-center justify-center text-2xl rounded transition-colors ${currentLang === 'en' ? 'opacity-60 cursor-default' : ''}`}
+              onClick={() => { 
+                setOpen(false); 
+                handleLanguageChange('en');
+              }}
+              disabled={currentLang === 'en'}
+              aria-label="English"
+              whileHover={currentLang !== 'en' ? { scale: 1.05 } : {}}
+              whileTap={currentLang !== 'en' ? { scale: 0.95 } : {}}
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.1 }}
+            >
+              {flags.en}
+              <motion.span 
+                className='text-xs text-white font-bold ml-0.5'
+                whileHover={currentLang !== 'en' ? { color: "#ff8c00", scale: 1.1 } : {}}
+                transition={{ duration: 0.2 }}
+              >
+                English
+              </motion.span>
+            </motion.button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

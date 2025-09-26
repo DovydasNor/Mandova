@@ -1,24 +1,19 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-const ReviewsForm = () => {
+
+const ReviewsForm: React.FC = () => {
     const [visible, setVisible] = useState(false);
     const { t } = useTranslation();
 
     useEffect(() => {
-        if (!document.getElementById('shapo-embed-js')) {
-            const script = document.createElement('script');
-            script.id = 'shapo-embed-js';
-            script.type = 'text/javascript';
-            script.src = 'https://cdn.shapo.io/js/embed.js';
-            script.defer = true;
-            document.body.appendChild(script);
-        }
+        // Handle navigation from other pages to reviews section
         if (window.localStorage.getItem('scrollToReviews') === 'true') {
             window.localStorage.removeItem('scrollToReviews');
+            // Longer delay to ensure Shapo widget is loaded after page refresh
             setTimeout(() => {
                 const el = document.getElementById('reviews');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }, 300);
+            }, 1000);
         }
     }, []);
 
