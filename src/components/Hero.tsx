@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
           className="text-orange font-bold text-sm md:text-base lg:text-lg xl:text-xl z-30 absolute top-4 right-3 md:right-4 lg:right-6"
           variants={fadeInDown}
         >
-          \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
         </motion.div>
         <div className="absolute inset-0"></div>
         <motion.div 
