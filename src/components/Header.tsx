@@ -69,10 +69,6 @@ const Header: React.FC = () => {
           </div>
         </button>
 
-        <div className="text-orange font-bold text-lg lg:text-xl">
-          \\\\\\\\\\\\\\\\\\\\\\\\
-        </div>
-
         <div>
           <LanguageSwitcher />
         </div>

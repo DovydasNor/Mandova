@@ -23,7 +23,7 @@ const AboutUs: React.FC = () => {
         viewport={viewportScrollDown}
         variants={fadeInDown}
       >
-        <span className="text-orange text-xl">\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\</span>
+        
       </motion.div>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">

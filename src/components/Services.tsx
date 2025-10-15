@@ -26,10 +26,8 @@ const Services: React.FC = () => {
             variants={fadeInDown}
           >
             <h2 className="text-3xl font-bold text-texts mb-4">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
-                <span className='text-orange text-xl'>\\\\\\\\\\\</span>  
+              <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4"> 
                 <span>{t('services.title')}</span>
-                <span className='text-orange text-xl'>\\\\\\\\\\\</span>
               </div>
             </h2>
             <div className="w-20 h-1 bg-mandova mx-auto mb-4"></div>
