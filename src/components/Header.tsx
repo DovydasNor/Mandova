@@ -64,7 +64,7 @@ const Header: React.FC = () => {
             <img 
               src={mandovaLogo} 
               alt="Logotipas"
-              className="w-60 lg:w-80 absolute z-10 -top-12 lg:-top-16 left-6"
+              className="w-30 lg:w-80 absolute z-10 -top-12 lg:-top-16 left-6"
             />
           </div>
         </button>
