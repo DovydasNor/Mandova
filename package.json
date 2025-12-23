@@ -24,6 +24,7 @@
     "@tailwindcss/vite": "^4.1.11",
     "framer-motion": "12.23.22",
     "i18next": "^25.4.2",
+    "lucide-react": "0.562.0",
     "motion": "^12.23.12",
     "ogl": "^1.0.11",
     "react": "^19.1.1",
