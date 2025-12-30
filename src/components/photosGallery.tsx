@@ -5,16 +5,17 @@ import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 
 // Import all gallery images
 import dazyklosKabykla from '../assets/Gallery/dazyklos kabykla.webp';
-import dazyklosKabykla2 from '../assets/Gallery/dazyklos kabykla2.webp';
 import dazyklosKabykla3 from '../assets/Gallery/dazyklos kabykla3.webp';
-import letnykas1 from '../assets/Gallery/letnykas1.webp';
-import letnykas2 from '../assets/Gallery/letnykas2.webp';
 import nerza from '../assets/Gallery/nerza.webp';
 import surenkamosLentynos1 from '../assets/Gallery/surenkamos lentynos1.webp';
 import surenkamosLentynos2 from '../assets/Gallery/surenkamos lentynos2.webp';
 import vartai from '../assets/Gallery/vartai.webp';
 import vartai190 from '../assets/Gallery/vartai190.webp';
 import vartai190_2 from '../assets/Gallery/vartai190_2.webp';
+import flansas from '../assets/Gallery/flansas.webp';
+import kabliai from '../assets/Gallery/kabliai.webp';
+import konstrukcijos from '../assets/Gallery/konstrukcijos.webp';
+import kriaukle from '../assets/Gallery/kriaukle.webp';
 
 interface Photo {
   id: number;
@@ -32,76 +33,83 @@ const PhotosGallery: React.FC = () => {
   const photos: Photo[] = useMemo(() => [
     {
       id: 1,
+      src: kriaukle,
+      title: t('gallery.kriaukle'),
+      category: 'construction',
+      aspect: 'portrait'
+    },
+    {
+      id: 2,
       src: dazyklosKabykla,
       title: t('gallery.stalazas_dazyklai'),
       category: 'industrial',
       aspect: 'landscape'
     },
     {
-      id: 2,
-      src: dazyklosKabykla2,
-      title: t('gallery.stalazas_dazyklai'),
-      category: 'industrial',
-      aspect: 'landscape'
-    },
-    {
       id: 3,
-      src: dazyklosKabykla3,
-      title: t('gallery.stalazas_dazyklai'),
-      category: 'industrial',
-      aspect: 'portrait'
-    },
-    {
-      id: 4,
-      src: letnykas1,
-      title: t('gallery.aliuminis_ratas'),
-      category: 'construction',
-      aspect: 'landscape'
-    },
-    {
-      id: 5,
-      src: letnykas2,
-      title: t('gallery.aliuminis_ratas'),
-      category: 'construction',
-      aspect: 'portrait'
-    },
-    {
-      id: 6,
       src: nerza,
       title: t('gallery.nerudijancio_konstrukcija'),
       category: 'construction',
       aspect: 'landscape'
     },
     {
+      id: 4,
+      src: kabliai,
+      title: t('gallery.kabliai'),
+      category: 'construction',
+      aspect: 'landscape'
+    },
+    {
+      id: 5,
+      src: flansas,
+      title: t('gallery.flansas'),
+      category: 'construction',
+      aspect: 'landscape'
+    },
+    {
+      id: 6,
+      src: dazyklosKabykla3,
+      title: t('gallery.stalazas_dazyklai'),
+      category: 'industrial',
+      aspect: 'portrait'
+    },
+    {
       id: 7,
+      src: konstrukcijos,
+      title: t('gallery.konstrukcijos'),
+      category: 'industrial',
+      aspect: 'landscape'
+    },
+    {
+      id: 8,
       src: surenkamosLentynos1,
       title: t('gallery.surenkamos_lentynos'),
       category: 'furniture',
       aspect: 'portrait'
     },
     {
-      id: 8,
+      id: 9,
       src: surenkamosLentynos2,
       title: t('gallery.surenkamos_lentynos'),
       category: 'furniture',
       aspect: 'landscape'
     },
     {
-      id: 9,
+      id: 10,
       src: vartai,
       title: t('gallery.stumdomi_vartai'),
       category: 'gates',
       aspect: 'landscape'
     },
     {
-      id: 10,
+      id: 11,
       src: vartai190,
       title: t('gallery.stumdomi_vartai'),
       category: 'gates',
       aspect: 'landscape'
     },
     {
-      id: 11,
+      id: 12,
       src: vartai190_2,
       title: t('gallery.stumdomi_vartai'),
       category: 'gates',

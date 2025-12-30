@@ -30,7 +30,7 @@
       "title": "Suvirinimo paslaugos",
       "desc": "Profesionalus suvirinimas naudojant pažangiausias technologijas"
     },
-    "consultation": "Reikalingos individualios konsultacijos?"
+    "consultation": "Reikalinga individuali konsultacija ?"
   },
   "about": {
     "title": "Apie Mandova",
@@ -91,6 +91,10 @@
     "nerudijancio_konstrukcija": "Nerudyjančio plieno konstrukcija",
     "surenkamos_lentynos": "Surenkamos lentynos",
     "stumdomi_vartai": "Stumdomi vartai",
+    "flansas": "Flanšas",
+    "kabliai": "Metalo gaminai",
+    "konstrukcijos": "Statybinės konstrukcijos",
+    "kriaukle": "Nerudyjančio plieno kriauklė",
     "close": "Uždaryti",
     "prev": "Ankstesnis",
     "next": "Kitas"

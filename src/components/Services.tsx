@@ -5,16 +5,89 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { fadeInDown, staggerContainer, staggerItem, viewportScrollDown } from '../utils/animations';
 
+// Animated Network Background Component
+const AnimatedNetwork: React.FC = () => {
+  const nodes = Array.from({ length: 20 }, (_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    delay: Math.random() * 2
+  }));
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
+      <svg className="w-full h-full" viewBox="0 0 100 100">
+        {/* Connection Lines */}
+        {nodes.map((node, i) => 
+          nodes.slice(i + 1).map((otherNode, j) => {
+            const distance = Math.sqrt(
+              Math.pow(node.x - otherNode.x, 2) + Math.pow(node.y - otherNode.y, 2)
+            );
+            if (distance < 25) {
+              return (
+                <motion.line
+                  key={`${i}-${j}`}
+                  x1={node.x}
+                  y1={node.y}
+                  x2={otherNode.x}
+                  y2={otherNode.y}
+                  stroke="#975a24"
+                  strokeWidth="0.1"
+                  initial={{ opacity: 0, pathLength: 0 }}
+                  animate={{ 
+                    opacity: [0.3, 0.8, 0.3],
+                    pathLength: 1
+                  }}
+                  transition={{
+                    duration: 3 + Math.random() * 2,
+                    repeat: Infinity,
+                    delay: node.delay
+                  }}
+                />
+              );
+            }
+            return null;
+          })
+        )}
+        
+        {/* Animated Nodes */}
+        {nodes.map((node) => (
+          <motion.circle
+            key={node.id}
+            cx={node.x}
+            cy={node.y}
+            r="0.3"
+            fill="#975a24"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ 
+              scale: [1, 1.5, 1],
+              opacity: [0.5, 1, 0.5]
+            }}
+            transition={{
+              duration: 2 + Math.random(),
+              repeat: Infinity,
+              delay: node.delay
+            }}
+          />
+        ))}
+      </svg>
+    </div>
+  );
+};
+
 const Services: React.FC = () => {
   const { t, i18n } = useTranslation();
   return (
-    <section id="paslaugos" className='my-16'>
+    <section id="paslaugos" className='my-16 relative'>
       <div>
         <img 
           src={lines}
           alt={t('services.lines_alt')}
-          className='absolute inset-0 w-230 object-cover -z-10 top-150 -left-50 opacity-20'/>
+          className='absolute inset-0 w-230 object-cover -z-10 -top-40 -left-50 opacity-20'/>
       </div>
+      
+      {/* Animated Network Background */}
+      <AnimatedNetwork />
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div 

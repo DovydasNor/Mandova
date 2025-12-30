@@ -58,22 +58,18 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <div className="hidden lg:flex items-center justify-around p-0.5 text-white relative">
+      <div className="hidden lg:flex items-center justify-between p-0.5 text-white relative">
         <button onClick={handleHomeClick} className="cursor-pointer">
           <div>
             <img 
               src={mandovaLogo} 
               alt="Logotipas"
-              className="w-30 lg:w-80 absolute z-10 -top-12 lg:-top-16 left-6"
+              className="w-16 lg:w-48 absolute z-10 -top-6 lg:-top-8 left-6"
             />
           </div>
         </button>
 
-        <div>
-          <LanguageSwitcher />
-        </div>
-
-        <div>
+        <div className="flex items-center gap-6">
           <ul className="flex gap-3 lg:gap-5 space-x-2 lg:space-x-4 p-6 lg:p-8 list-none">
             <li>
               <a
@@ -106,6 +102,8 @@ const Header: React.FC = () => {
               </a>
             </li>
           </ul>
+          
+          <LanguageSwitcher />
         </div>
       </div>
 
@@ -115,7 +113,7 @@ const Header: React.FC = () => {
             <img 
               src={mandovaLogo} 
               alt="Logotipas"
-              className="h-30 w-auto"
+              className="h-16 w-auto"
             />
           </button>
 

@@ -5,14 +5,15 @@ const GoogleReviews: React.FC = () => {
 	const { i18n } = useTranslation();
 	const widgetRef = useRef<HTMLDivElement>(null);
 	const scriptLoadedRef = useRef<boolean>(false);
+	const retryCountRef = useRef<number>(0);
+	const maxRetries = 20; // Maximum 20 retries (10 seconds)
 
 	const loadShapoWidget = () => {
-		console.log('loadShapoWidget called, Shapo available:', !!(window as any).Shapo);
-		console.log('Widget ref current:', !!widgetRef.current);
-		console.log('Page language:', document.documentElement.lang);
+		console.log('Trying to load Shapo widget, attempt:', retryCountRef.current + 1);
 		
 		// Check if Shapo is available and widget container exists
 		if ((window as any).Shapo && widgetRef.current) {
+			console.log('Shapo available, initializing widget');
 			// Clear any existing widget content
 			widgetRef.current.innerHTML = '';
 			
@@ -21,33 +22,40 @@ const GoogleReviews: React.FC = () => {
 			
 			// Initialize the widget
 			try {
-				console.log('Calling Shapo.init()');
 				(window as any).Shapo.init();
-				console.log('Shapo.init() completed');
+				retryCountRef.current = 0; // Reset retry count on success
+				console.log('Shapo widget initialized successfully');
 			} catch (error) {
-				console.log('Shapo widget initialization error:', error);
+				console.error('Shapo widget initialization error:', error);
 			}
 		} else {
-			console.log('Shapo not available yet, retrying in 500ms');
-			setTimeout(loadShapoWidget, 500);
+			retryCountRef.current += 1;
+			
+			if (retryCountRef.current <= maxRetries) {
+				console.log('Shapo not ready, retrying in 500ms (attempt', retryCountRef.current, 'of', maxRetries, ')');
+				setTimeout(loadShapoWidget, 500);
+			} else {
+				console.warn('Shapo widget failed to load after', maxRetries, 'retries');
+			}
 		}
 	};
 
 	useEffect(() => {
-		console.log('GoogleReviews component mounted, current lang:', i18n.language);
-
 		const loadScript = () => {
+			console.log('Loading Shapo script for language:', i18n.language);
+			
 			// Always remove existing script to ensure fresh load
 			const existingScript = document.getElementById('shapo-embed-js');
 			if (existingScript) {
-				console.log('Removing existing Shapo script');
 				existingScript.remove();
 			}
 
 			// Clear any existing window Shapo reference
 			delete (window as any).Shapo;
+			
+			// Reset retry count
+			retryCountRef.current = 0;
 
-			console.log('Loading fresh Shapo script for language:', i18n.language);
 			const script = document.createElement('script');
 			script.id = 'shapo-embed-js';
 			script.type = 'text/javascript';
@@ -58,9 +66,8 @@ const GoogleReviews: React.FC = () => {
 				console.log('Shapo script loaded successfully');
 				scriptLoadedRef.current = true;
 				setTimeout(() => {
-					console.log('Initializing Shapo widget for language:', i18n.language);
 					loadShapoWidget();
-				}, 500); // Increased delay
+				}, 1000); // Increased delay to 1 second
 			};
 			
 			script.onerror = () => {
@@ -74,10 +81,10 @@ const GoogleReviews: React.FC = () => {
 		setTimeout(loadScript, 300);
 
 		return () => {
-			console.log('GoogleReviews component unmounting');
 			if (widgetRef.current) {
 				widgetRef.current.innerHTML = '';
 			}
+			retryCountRef.current = 0; // Reset retry count on cleanup
 		};
 	}, [i18n.language]);
 
