@@ -5,6 +5,7 @@ import quality from '../assets/quality-medal-svgrepo-com.svg';
 import drilling_machine from '../assets/drilling-machine.webp';
 import handshake from '../assets/partnership-handshake.webp';
 import idea from '../assets/idea.webp';
+import lines from '../assets/lines.webp';
 import LazyImage from './LazyImage';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
@@ -19,7 +20,15 @@ const AboutUs: React.FC = () => {
   };
 
   return (
-    <section id="apie" className="mb-16" key={i18n.language}>
+    <section id="apie" className="mb-16 relative" key={i18n.language}>
+      {/* Geometric Network Background - Right Side */}
+      <div className="absolute top-0 right-0 w-1/3 h-full overflow-hidden pointer-events-none opacity-20">
+        <img 
+          src={lines}
+          alt="Geometric Network Pattern" 
+          className="w-full h-full object-cover object-center" 
+        />
+      </div>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div 
