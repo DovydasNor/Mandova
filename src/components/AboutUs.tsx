@@ -22,7 +22,7 @@ const AboutUs: React.FC = () => {
   return (
     <section id="apie" className="mb-16 relative" key={i18n.language}>
       {/* Geometric Network Background - Right Side */}
-      <div className="absolute top-0 right-0 w-1/3 h-full overflow-hidden pointer-events-none opacity-20">
+      <div className="hidden md:block absolute top-0 right-0 w-1/3 h-full overflow-hidden pointer-events-none opacity-20">
         <img 
           src={lines}
           alt="Geometric Network Pattern" 
@@ -67,7 +67,7 @@ const AboutUs: React.FC = () => {
             </motion.div>
 
             <motion.div 
-              className="grid sm:grid-cols-2 gap-4"
+              className="grid grid-cols-2 gap-4 place-items-center sm:place-items-start"
               initial="initial"
               whileInView="animate"
               viewport={viewportScrollDown}

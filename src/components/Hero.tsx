@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
     <div key={i18n.language}>
       {/* Mobile Hero */}
       <motion.div 
-        className="block sm:hidden relative min-h-[45vh] w-full overflow-hidden"
+        className="block sm:hidden relative min-h-[70vh] w-full overflow-hidden"
         initial="initial"
         animate="animate"
         viewport={viewportOnce}
@@ -31,14 +31,14 @@ const Hero: React.FC = () => {
           className="absolute inset-0 w-full h-full object-cover object-center brightness-40 scale-105"
           variants={fadeInLeft}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/80"></div>
         
-        {/* Animated particles */}
+        {/* Enhanced mobile particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(6)].map((_, i) => (
+          {[...Array(8)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-orange/60 rounded-full"
+              className="absolute w-1.5 h-1.5 bg-orange/70 rounded-full"
               initial={{ 
                 x: Math.random() * window.innerWidth, 
                 y: window.innerHeight,
@@ -46,53 +46,96 @@ const Hero: React.FC = () => {
               }}
               animate={{ 
                 y: -50,
-                opacity: [0, 1, 0],
+                opacity: [0, 0.8, 0],
               }}
               transition={{
                 duration: 3 + Math.random() * 2,
                 repeat: Infinity,
-                delay: i * 0.5,
+                delay: i * 0.4,
                 ease: "linear"
               }}
             />
           ))}
         </div>
         
+        {/* Mobile stats overlay */}
         <motion.div 
-          className="relative z-10 flex items-center justify-center h-full px-6 py-16"
+          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 sm:left-auto sm:right-4 sm:transform-none hidden min-[375px]:flex space-x-2"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1 }}
+        >
+          {[
+            { icon: Award, value: "2+", label: t('about.years_experience') },
+            { icon: Shield, value: "100%", label: t('about.quality') },
+          ].map((stat, i) => (
+            <motion.div
+              key={i}
+              className="bg-black/50 backdrop-blur-sm border border-white/10 rounded-lg p-2 text-center min-w-[70px]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2 + i * 0.2 }}
+            >
+              <stat.icon className="w-4 h-4 text-orange mx-auto mb-1" />
+              <div className="text-sm font-bold text-white">{stat.value}</div>
+              <div className="text-xs text-white/80 leading-tight">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
+        
+        <motion.div 
+          className="relative z-10 flex items-center justify-center h-full px-6 py-20"
           variants={fadeInUp}
         >
-          <div className="text-center text-white max-w-sm">
+          <div className="text-center text-white max-w-md w-full">
             <motion.h1 
-              className="text-3xl font-bold mb-4 text-white leading-tight"
+              className="text-3xl sm:text-4xl font-bold mb-6 text-white leading-tight"
               variants={fadeInDown}
               style={{
-                textShadow: '2px 2px 4px rgba(0,0,0,0.8)'
+                textShadow: '3px 3px 6px rgba(0,0,0,0.9)'
               }}
             >
               {t('hero.title')}
             </motion.h1>
             <motion.h2 
-              className="text-lg font-semibold text-orange leading-tight mb-6"
+              className="text-lg sm:text-xl font-semibold text-orange leading-relaxed mb-8"
               variants={fadeInUp}
               style={{
-                textShadow: '1px 1px 3px rgba(0,0,0,0.8)'
+                textShadow: '2px 2px 4px rgba(0,0,0,0.8)'
               }}
             >
               {t('hero.subtitle')}
             </motion.h2>
 
-            {/* Contact info for mobile */}
+            {/* Enhanced mobile contact info */}
             <motion.div 
-              className="space-y-2 text-sm"
+              className="space-y-3 text-sm mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
             >
               <div className="flex items-center justify-center gap-2 text-white/90">
                 <Mail className="w-4 h-4 text-orange" />
-                <span>info@mandova.lt</span>
+                <span className="font-medium">info@mandova.lt</span>
               </div>
+              <div className="flex items-center justify-center gap-2 text-white/90">
+                <MapPin className="w-4 h-4 text-orange" />
+                <span className="font-medium">Šiauliai, Lietuva</span>
+              </div>
+            </motion.div>
+
+            {/* Mobile call to action */}
+            <motion.div
+              variants={fadeInUp}
+              className="pt-2"
+            >
+              <Link 
+                to="/Contacts"
+                className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white px-6 py-3 rounded-lg font-semibold text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl hover:shadow-orange/20"
+              >
+                <Zap className="w-4 h-4" />
+                {t('services.consultation')}
+              </Link>
             </motion.div>
           </div>
         </motion.div>
@@ -149,7 +192,7 @@ const Hero: React.FC = () => {
         
         {/* Stats overlay */}
         <motion.div 
-          className="absolute top-8 right-8 space-y-4"
+          className="absolute bottom-8 right-8 sm:bottom-8 md:top-8 space-y-4"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1 }}
