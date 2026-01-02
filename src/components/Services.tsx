@@ -109,126 +109,107 @@ const Services: React.FC = () => {
             </p>
           </motion.div>
           <motion.div 
-            className="grid md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mt-16"
             initial="initial"
             whileInView="animate"
             viewport={viewportScrollDown}
             variants={staggerContainer}
           >
             <motion.div 
-              className="bg-orange text-center group p-6 rounded-lg" 
-              style={{ touchAction: 'manipulation' }}
+              className="text-center group p-6 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300" 
               variants={staggerItem}
               whileHover={{ 
-                y: -12,
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-                transition: { duration: 0.3 }
+                y: -4,
+                transition: { duration: 0.2 }
               }}
-              whileTap={{ scale: 0.95 }}
             >
               <motion.div 
-                className="w-16 h-16 bg-mandova/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-mandova/20 transition-colors"
+                className="w-20 h-20 bg-orange rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"
                 whileHover={{ 
                   scale: 1.1,
-                  rotate: 5,
-                  backgroundColor: "rgba(139, 69, 19, 0.3)",
                   transition: { duration: 0.2 }
                 }}
               >
                 <motion.svg 
-                  className="w-8 h-8 text-mandova" 
+                  className="w-10 h-10 text-white" 
                   fill="currentColor" 
                   viewBox="0 0 24 24"
                   whileHover={{ 
-                    scale: 1.2,
-                    rotate: -5,
+                    scale: 1.1,
                     transition: { duration: 0.2 }
                   }}
                 >
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                 </motion.svg>
               </motion.div>
-              <h3 className="text-xl font-semibold text-texts mb-3">{t('services.card1.title')}</h3>
-              <p className="text-background text-sm">
+              <h3 className="text-xl font-semibold text-texts mb-4">{t('services.card1.title')}</h3>
+              <p className="text-orange leading-relaxed">
                 {t('services.card1.desc')}
               </p>
             </motion.div>
+            
             <motion.div 
-              className="bg-orange text-center group p-6 rounded-lg" 
-              style={{ touchAction: 'manipulation' }}
+              className="text-center group p-6 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300" 
               variants={staggerItem}
               whileHover={{ 
-                y: -12,
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-                transition: { duration: 0.3 }
+                y: -4,
+                transition: { duration: 0.2 }
               }}
-              whileTap={{ scale: 0.95 }}
             >
               <motion.div 
-                className="w-16 h-16 bg-mandova/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-mandova/20 transition-colors"
+                className="w-20 h-20 bg-orange rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"
                 whileHover={{ 
                   scale: 1.1,
-                  rotate: 5,
-                  backgroundColor: "rgba(139, 69, 19, 0.3)",
                   transition: { duration: 0.2 }
                 }}
               >
                 <motion.svg 
-                  className="w-8 h-8 text-mandova" 
+                  className="w-10 h-10 text-white" 
                   fill="currentColor" 
                   viewBox="0 0 24 24"
                   whileHover={{ 
-                    scale: 1.2,
-                    rotate: -5,
+                    scale: 1.1,
                     transition: { duration: 0.2 }
                   }}
                 >
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </motion.svg>
               </motion.div>
-              <h3 className="text-xl font-semibold text-texts mb-3">{t('services.card2.title')}</h3>
-              <p className="text-background text-sm">
+              <h3 className="text-xl font-semibold text-texts mb-4">{t('services.card2.title')}</h3>
+              <p className="text-orange leading-relaxed">
                 {t('services.card2.desc')}
               </p>
             </motion.div>
+            
             <motion.div 
-              className="bg-orange text-center group p-6 rounded-lg" 
-              style={{ touchAction: 'manipulation' }}
+              className="text-center group md:col-span-2 lg:col-span-1 p-6 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300" 
               variants={staggerItem}
               whileHover={{ 
-                y: -12,
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-                transition: { duration: 0.3 }
+                y: -4,
+                transition: { duration: 0.2 }
               }}
-              whileTap={{ scale: 0.95 }}
             >
               <motion.div 
-                className="w-16 h-16 bg-mandova/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-mandova/20 transition-colors"
+                className="w-20 h-20 bg-orange rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"
                 whileHover={{ 
                   scale: 1.1,
-                  rotate: 5,
-                  backgroundColor: "rgba(139, 69, 19, 0.3)",
                   transition: { duration: 0.2 }
                 }}
               >
                 <motion.svg 
-                  className="w-8 h-8 text-mandova" 
+                  className="w-10 h-10 text-white" 
                   fill="currentColor" 
                   viewBox="0 0 24 24"
                   whileHover={{ 
-                    scale: 1.2,
-                    rotate: -5,
+                    scale: 1.1,
                     transition: { duration: 0.2 }
                   }}
                 >
                   <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
                 </motion.svg>
               </motion.div>
-              <h3 className="text-xl font-semibold text-texts mb-3">{t('services.card3.title')}</h3>
-              <p className="text-background text-sm">
+              <h3 className="text-xl font-semibold text-texts mb-4">{t('services.card3.title')}</h3>
+              <p className="text-orange leading-relaxed">
                 {t('services.card3.desc')}
               </p>
             </motion.div>
