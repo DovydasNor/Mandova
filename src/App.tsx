@@ -28,7 +28,6 @@ const App: React.FC = () => {
     }
   }, []);
 
-  // Set HTML lang attribute on app load and language changes
   useEffect(() => {
     document.documentElement.lang = i18n.language === 'lt' ? 'lt' : 'en';
   }, [i18n.language]);

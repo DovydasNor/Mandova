@@ -22,5 +22,5 @@ html::-webkit-scrollbar-thumb:hover, *::-webkit-scrollbar-thumb:hover {
 /* Firefox */
 html, body, * {
     scrollbar-width: thin;
-    scrollbar-color: #975a24 #262626;
+    scrollbar-color: #975a24 #212121;
 }
