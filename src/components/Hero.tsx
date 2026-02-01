@@ -253,7 +253,7 @@ const Hero: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-orange" />
-                <span className="text-lg">Šiauliai, Lietuva</span>
+                <span className="text-lg">{t('hero.location')}</span>
               </div>
             </motion.div>
             

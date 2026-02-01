@@ -3,12 +3,11 @@ import Hero from "../components/Hero";
 import AboutUs from "../components/AboutUs";
 import Services from "../components/Services";
 import { useLocation } from "react-router-dom";
-import GoogleReviews from "../components/GoogleReviews";
-import ReviewsForm from "../components/ReviewsForm";
 import { usePageMeta } from "../hooks/usePageMeta";
 import SchemaMarkup from "../components/SchemaMarkup";
 import { generateBusinessSchema, generateWebsiteSchema, generateServiceSchema } from "../utils/schemaMarkup";
 import { useTranslation } from "react-i18next";
+import GoogleMap from "../components/GoogleMap";
 
 const Home: React.FC = () => {
   const { i18n } = useTranslation();
@@ -47,8 +46,7 @@ const Home: React.FC = () => {
       <Hero />
       <Services />
       <AboutUs />
-      <GoogleReviews />
-      <ReviewsForm />
+      <GoogleMap />
     </div>
   )
 }

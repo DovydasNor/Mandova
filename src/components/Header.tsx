@@ -93,14 +93,14 @@ const Header: React.FC = () => {
                 {t('header.contacts')}
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="#reviews"
                 onClick={handleReviewsClick}
                 className="hover:text-orange transition-colors cursor-pointer text-texts text-lg lg:text-xl font-medium">
                 {t('header.reviews')}
               </a>
-            </li>
+            </li> */}
           </ul>
           
           <LanguageSwitcher />

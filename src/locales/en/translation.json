@@ -12,7 +12,8 @@
   "hero": {
     "title": "Quality welding, impressive results",
     "subtitle": "Building a stronger future - project by project",
-    "image_alt": "Welding work at Mandova factory"
+    "image_alt": "Welding work at Mandova factory",
+    "location": "Šiauliai, Lithuania"
   },
   "services": {
     "lines_alt": "Decorative lines",

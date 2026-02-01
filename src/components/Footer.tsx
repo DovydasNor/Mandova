@@ -8,7 +8,7 @@ import { fadeInDown, staggerContainer, staggerItem, viewportScrollDown } from '.
 const Footer: React.FC = () => {
   const { t, i18n } = useTranslation();
   return (
-    <footer className="bg-gray-900 text-white" key={i18n.language}>
+    <footer className="text-white" style={{ backgroundColor: '#212121' }} key={i18n.language}>
       <div className="container mx-auto px-4">
         <motion.div 
           className="py-12 grid lg:grid-cols-4 md:grid-cols-2 gap-8"
@@ -106,7 +106,8 @@ const Footer: React.FC = () => {
           </motion.div>
         </motion.div>
         <motion.div 
-          className="border-t border-gray-800 py-6"
+          className="border-t py-6"
+          style={{ borderTopColor: '#2a2a2a' }}
           initial="initial"
           whileInView="animate"
           viewport={viewportScrollDown}
