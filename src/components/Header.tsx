@@ -195,7 +195,7 @@ const Header: React.FC = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4, duration: 0.3 }}
                   >
-                    <NavLink
+                    {/*<NavLink
                       to="/B2B"
                       onClick={() => setIsMenuOpen(false)}
                       className="block py-2 hover:text-orange transition-colors cursor-pointer text-texts text-lg font-medium">
