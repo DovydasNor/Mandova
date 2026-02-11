@@ -93,6 +93,13 @@ const Header: React.FC = () => {
                 {t('header.contacts')}
               </NavLink>
             </li>
+            {/*<li>
+              <NavLink
+                to="/B2B"
+                className="hover:text-orange transition-colors cursor-pointer text-texts text-lg lg:text-xl font-medium">
+                {t('header.b2b')}
+              </NavLink>
+            </li>
             {/* <li>
               <a
                 href="#reviews"
@@ -181,6 +188,18 @@ const Header: React.FC = () => {
                       onClick={() => setIsMenuOpen(false)}
                       className="block py-2 hover:text-orange transition-colors cursor-pointer text-texts text-lg font-medium">
                       {t('header.contacts')}
+                    </NavLink>
+                  </motion.li>
+                  <motion.li
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4, duration: 0.3 }}
+                  >
+                    <NavLink
+                      to="/B2B"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block py-2 hover:text-orange transition-colors cursor-pointer text-texts text-lg font-medium">
+                      {t('header.b2b')}
                     </NavLink>
                   </motion.li>
                   {/* <motion.li

@@ -13,6 +13,7 @@ import {
   LazyContacts, 
   LazyPrivacyPolicy, 
   LazyNotFoundPage,
+  LazyB2B,
   LazyComponentWrapper 
 } from './utils/lazyComponents';
 
@@ -46,6 +47,11 @@ const App: React.FC = () => {
         <Route path="/Contacts" element={
           <LazyComponentWrapper>
             <LazyContacts />
+          </LazyComponentWrapper>
+        } />
+        <Route path="/B2B" element={
+          <LazyComponentWrapper>
+            <LazyB2B />
           </LazyComponentWrapper>
         } />
         <Route path="/privacy_policy" element={
