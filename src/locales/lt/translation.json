@@ -7,7 +7,9 @@
     "about": "Apie mus",
     "gallery": "Darbų galerija",
     "contacts": "Kontaktai",
-    "reviews": "Atsiliepimai"
+    "reviews": "Atsiliepimai",
+    "b2b": "B2B",
+    "home": "Pagrindinis"
   },
   "hero": {
     "title": "Kokybiškas suvirinimas, džiuginantys rezultatai",
@@ -66,8 +68,8 @@
     "description": "Profesionalūs suvirinimo sprendimai ir metalo konstrukcijų gamyba. Jau daugiau nei 2 metus teikiame aukščiausios kokybės paslaugas.",
     "links_title": "Nuorodos",
     "contacts_title": "Kontaktai",
-    "address": "J. Basanavičiaus g. 144a Šiauliai, Lietuva",
-    "copyright": "© 2025 Mandova. Visos teisės saugomos.",
+    "address": "J. Basanavičiaus g. 144A Šiauliai, Lietuva",
+    "copyright": "© 2026 Mandova. Visos teisės saugomos.",
     "privacy_policy": "Privatumo politika"
   },
 
@@ -76,7 +78,7 @@
       "title": "Susisiekite su mumis",
       "subtitle": "Pasiruošę atsakyti į jūsų klausimus ir aptarti projektus",
       "address_title": "Adresas",
-      "address_line1": "J. Basanavičiaus g. 144a",
+      "address_line1": "J. Basanavičiaus g. 144A",
       "address_line2": "76128 Šiauliai, Lietuva",
       "phone_title": "Telefonas",
       "email_title": "El. paštas",
@@ -151,6 +153,66 @@
     "backHome": "Grįžti į pradžią",
     "contactUs": "Susisiekti su mumis",
     "needHelp": "Reikia pagalbos? Susisiekite su mumis:"
+  },
+  "b2b": {
+    "hero": {
+      "title": "Verslo partnerystės sprendimai",
+      "subtitle": "Profesionalūs metalo konstrukcijų sprendimai pritaikyti jūsų verslo poreikiams",
+      "years_experience": "Metų patirtis",
+      "completed_projects": "B2B projektai",
+      "support": "Palaikymas"
+    },
+    "services": {
+      "title": "Mūsų B2B paslaugos",
+      "subtitle": "Išsamūs sprendimai pramonės ir komercinėms organizacijoms",
+      "industrial": {
+        "title": "Pramonės sprendimai",
+        "description": "Didelio masto gamybos ir surinkimo paslaugos pramonės klientams",
+        "feature1": "Sunkiosios konstrukcijos",
+        "feature2": "Pramonės įrangos gamyba",
+        "feature3": "Montavimo paslaugos objekte"
+      },
+      "manufacturing": {
+        "title": "OEM gamyba",
+        "description": "Individuali gamybos paslaugų originalių įrangų gamintojams",
+        "feature1": "Preciziškas metalo apdirbimas",
+        "feature2": "Kokybės kontrolės sistemos",
+        "feature3": "Lankstūs gamybos pajėgumai"
+      },
+      "partnership": {
+        "title": "Strateginės partnerystės",
+        "description": "Ilgalaikio bendradarbiavimo galimybės su konkurenciniais pranašumais",
+        "feature1": "Nuolaidos už kiekį",
+        "feature2": "Prioritetinis aptarnavimas",
+        "feature3": "Specialus projektų valdymas"
+      }
+    },
+    "benefits": {
+      "title": "Partnerių privalumai",
+      "subtitle": "Mandova pasirinkimo kaip B2B partnerio pranašumai",
+      "cost": {
+        "title": "Kaštų efektyvumas",
+        "description": "Konkurencingi kainos su nuolaidomis už kiekį ilgalaikėms partnerystėms"
+      },
+      "quality": {
+        "title": "Garantuota kokybė",
+        "description": "ISO sertifikuoti procesai užtikrinantys nuosekliai aukštą kokybę"
+      },
+      "speed": {
+        "title": "Greitas pristatymas",
+        "description": "Prioritetinis tvarkymas ir pagreitinta gamyba verslo klientams"
+      },
+      "reliability": {
+        "title": "Patikima partnerystė",
+        "description": "Patvirtinta reputacija su 15+ metų patirtimi aptarnaujant verslo klientus"
+      }
+    },
+    "cta": {
+      "title": "Pasiruošę bendradarbiauti su mumis?",
+      "subtitle": "Prisijunkite prie šimtų patenkinančių verslo klientų, kurie pasitiki Mandova metalo konstrukcijų poreikiais",
+      "contact_button": "Gauti verslo pasiūlymą",
+      "call_button": "Skambinti verslo linijai"
+    }
   },
   "reviews": {
     "write_review": "Parašyti atsiliepimą",

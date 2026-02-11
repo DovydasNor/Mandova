@@ -85,7 +85,6 @@ const Contacts: React.FC = () => {
               <div className='flex flex-col'>
                 <h3 className="text-2xl font-semibold text-texts mb-2">{t('contacts.phone_title')}</h3>
                 <a href='tel:+37062223642' className="text-xl text-orange font-medium">+370 622 23642</a>
-                <a href='tel:+37065399915' className="text-xl text-orange font-medium">+370 653 99915</a>
               </div>
             </motion.div>
             <motion.div className="flex items-start space-x-6" variants={staggerItem}>

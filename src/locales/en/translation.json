@@ -7,7 +7,9 @@
     "about": "About Us",
     "gallery": "Gallery",
     "contacts": "Contacts",
-    "reviews": "Reviews"
+    "reviews": "Reviews",
+    "b2b": "B2B",
+    "home": "Home"
   },
   "hero": {
     "title": "Quality welding, impressive results",
@@ -66,7 +68,7 @@
       "description": "Professional welding solutions and metal construction manufacturing. For over 2 years we have been providing top quality services.",
     "links_title": "Links",
     "contacts_title": "Contacts",
-    "address": "J. Basanavičiaus g. 144a Šiauliai, Lithuania",
+    "address": "J. Basanavičiaus g. 144A Šiauliai, Lithuania",
     "copyright": "© 2025 Mandova. All rights reserved.",
     "privacy_policy": "Privacy Policy"
     },
@@ -75,7 +77,7 @@
       "title": "Contact Us",
       "subtitle": "Ready to answer your questions and discuss projects",
       "address_title": "Address",
-      "address_line1": "J. Basanavičiaus g. 144a",
+      "address_line1": "J. Basanavičiaus g. 144A",
       "address_line2": "76128 Šiauliai, Lithuania",
       "phone_title": "Phone",
       "email_title": "Email",
@@ -151,6 +153,66 @@
     "backHome": "Back to Home",
     "contactUs": "Contact Us",
     "needHelp": "Need help? Contact us:"
+  },
+  "b2b": {
+    "hero": {
+      "title": "Business Partnership Solutions",
+      "subtitle": "Professional metal construction services tailored for your business needs",
+      "years_experience": "Years Experience",
+      "completed_projects": "B2B Projects",
+      "support": "Support"
+    },
+    "services": {
+      "title": "Our B2B Services",
+      "subtitle": "Comprehensive solutions for industrial and commercial partners",
+      "industrial": {
+        "title": "Industrial Solutions",
+        "description": "Large-scale manufacturing and assembly services for industrial clients",
+        "feature1": "Heavy-duty constructions",
+        "feature2": "Industrial equipment manufacturing",
+        "feature3": "On-site installation services"
+      },
+      "manufacturing": {
+        "title": "OEM Manufacturing",
+        "description": "Custom manufacturing services for original equipment manufacturers",
+        "feature1": "Precision metalworking",
+        "feature2": "Quality control systems",
+        "feature3": "Flexible production capacity"
+      },
+      "partnership": {
+        "title": "Strategic Partnerships",
+        "description": "Long-term collaboration opportunities with competitive advantages",
+        "feature1": "Volume discounts",
+        "feature2": "Priority scheduling",
+        "feature3": "Dedicated project management"
+      }
+    },
+    "benefits": {
+      "title": "Partner Benefits",
+      "subtitle": "Advantages of choosing Mandova as your B2B partner",
+      "cost": {
+        "title": "Cost Efficiency",
+        "description": "Competitive pricing with volume discounts for long-term partnerships"
+      },
+      "quality": {
+        "title": "Guaranteed Quality",
+        "description": "ISO certified processes ensuring consistent high-quality results"
+      },
+      "speed": {
+        "title": "Fast Delivery",
+        "description": "Priority handling and expedited production for business clients"
+      },
+      "reliability": {
+        "title": "Reliable Partnership",
+        "description": "Proven track record with 15+ years serving business clients"
+      }
+    },
+    "cta": {
+      "title": "Ready to Partner with Us?",
+      "subtitle": "Join hundreds of satisfied business clients who trust Mandova for their metal construction needs",
+      "contact_button": "Get Business Quote",
+      "call_button": "Call Business Line"
+    }
   },
   "reviews": {
     "write_review": "Write a Review",
