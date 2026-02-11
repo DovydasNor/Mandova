@@ -190,7 +190,7 @@ const Header: React.FC = () => {
                       {t('header.contacts')}
                     </NavLink>
                   </motion.li>
-                  <motion.li
+                  {/*<motion.li
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4, duration: 0.3 }}
