@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import mandovaLogo from '../assets/Mandova_logo_trans.webp';
+import mandovaLogo from '../assets/VerticalWhite.png';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { fadeInDown, staggerContainer, staggerItem, viewportScrollDown } from '../utils/animations';
@@ -21,8 +21,7 @@ const Footer: React.FC = () => {
             <motion.img 
               src={mandovaLogo} 
               alt="Mandova Logo" 
-              className="w-48 mb-4"
-              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+              className="w-60 mb-4"
             />
             <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
               {t('footer.description')}
