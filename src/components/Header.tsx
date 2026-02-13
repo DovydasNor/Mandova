@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import mandovaLogo from '../assets/HorizontalWhite.png';
+import mobileIcon from '../assets/IconWhite.png';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
@@ -118,7 +119,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between px-4 py-4">
           <button onClick={handleHomeClick} className="cursor-pointer">
             <img 
-              src={mandovaLogo} 
+              src={mobileIcon} 
               alt="Logotipas"
               className="h-16 w-auto"
             />
