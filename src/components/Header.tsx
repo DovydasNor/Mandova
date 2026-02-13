@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import mandovaLogo from '../assets/Mandova_logo_trans.webp';
+import mandovaLogo from '../assets/HorizontalWhite.png';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
@@ -64,7 +64,7 @@ const Header: React.FC = () => {
             <img 
               src={mandovaLogo} 
               alt="Logotipas"
-              className="w-16 lg:w-48 absolute z-10 -top-6 lg:-top-8 left-6"
+              className="w-80 h-auto transition-transform duration-300 transform hover:scale-105 ml-10"
             />
           </div>
         </button>
