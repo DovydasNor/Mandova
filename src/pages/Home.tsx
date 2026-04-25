@@ -13,11 +13,11 @@ const Home: React.FC = () => {
   const { i18n } = useTranslation();
   
   usePageMeta({
-    title: 'Mandova - Metalo konstrukcijos ir suvirinimo paslaugos Lietuvoje',
-    description: 'Mandova – profesionalūs suvirinimo darbai, metalo konstrukcijos pagal užsakymą. Kokybiškas metalo apdirbimas, konstrukcijų gamyba ir montavimas. Susisiekite su mumis jau šiandien.',
-    keywords: 'suvirinimo darbai, metalo konstrukcijos, metalo apdirbimas, suvirinimas, konstrukcijų gamyba, Mandova, Lietuva',
-    canonical: 'https://mandova.lt/',
-    ogImage: 'https://mandova.lt/src/assets/welding-work-with-metal-construction-busy-metal-factory.webp',
+    title: 'Norvex - Metalo konstrukcijos ir suvirinimo paslaugos Lietuvoje',
+    description: 'Norvex – profesionalūs suvirinimo darbai, metalo konstrukcijos pagal užsakymą. Kokybiškas metalo apdirbimas, konstrukcijų gamyba ir montavimas. Susisiekite su mumis jau šiandien.',
+    keywords: 'suvirinimo darbai, metalo konstrukcijos, metalo apdirbimas, suvirinimas, konstrukcijų gamyba, norvex, Lietuva',
+    canonical: 'https://norvex.lt/',
+    ogImage: 'https://norvex.lt/src/assets/welding-work-with-metal-construction-busy-metal-factory.webp',
     ogType: 'website'
   });
 

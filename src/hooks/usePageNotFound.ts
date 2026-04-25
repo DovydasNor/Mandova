@@ -26,7 +26,7 @@ export const usePageNotFound = (pageTitle: string): void => {
       if (robotsMetaToRemove) robotsMetaToRemove.remove();
       if (canonicalToRemove) canonicalToRemove.remove();
       
-      document.title = 'Mandova - Metalo konstrukcijos ir suvirinimo paslaugos';
+      document.title = 'Norvex - Metalo konstrukcijos ir suvirinimo paslaugos';
     };
   }, [pageTitle]);
 };

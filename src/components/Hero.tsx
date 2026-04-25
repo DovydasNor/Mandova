@@ -116,7 +116,7 @@ const Hero: React.FC = () => {
             >
               <div className="flex items-center justify-center gap-2 text-white/90">
                 <Mail className="w-4 h-4 text-orange" />
-                <span className="font-medium">info@mandova.lt</span>
+                <span className="font-medium">info@norvex.lt</span>
               </div>
               <div className="flex items-center justify-center gap-2 text-white/90">
                 <MapPin className="w-4 h-4 text-orange" />
@@ -249,7 +249,7 @@ const Hero: React.FC = () => {
             >
               <div className="flex items-center gap-2">
                 <Mail className="w-5 h-5 text-orange" />
-                <span className="text-lg">info@mandova.lt</span>
+                <span className="text-lg">info@norvex.lt</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-orange" />

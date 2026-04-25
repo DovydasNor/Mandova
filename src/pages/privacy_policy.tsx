@@ -12,14 +12,14 @@ const PrivacyPolicy: React.FC = () => {
     title: 'Privatumo politika - Mandova duomenų apsauga ir privatumas',
     description: 'Mandova privatumo politika - sužinokite, kaip renkame, naudojame ir saugome jūsų asmens duomenis. BDAR atitikties informacija ir jūsų teisės.',
     keywords: 'privatumo politika, duomenų apsauga, BDAR, asmens duomenų tvarkymas, Mandova',
-    canonical: 'https://mandova.lt/privacy_policy',
-    ogImage: 'https://mandova.lt/src/assets/Mandova_logo_trans.webp',
+    canonical: 'https://norvex.lt/privacy_policy',
+    ogImage: 'https://norvex.lt/src/assets/Mandova_logo_trans.webp',
     ogType: 'article'
   });
 
   const breadcrumbItems = [
-    { name: 'Pagrindinis', url: 'https://mandova.lt/' },
-    { name: 'Privatumo politika', url: 'https://mandova.lt/privacy_policy' }
+    { name: 'Pagrindinis', url: 'https://norvex.lt/' },
+    { name: 'Privatumo politika', url: 'https://norvex.lt/privacy_policy' }
   ];
 
   return (
@@ -29,7 +29,7 @@ const PrivacyPolicy: React.FC = () => {
       <p>{t('privacy.intro')}</p>
       <h2 className="text-2xl font-semibold mt-8 mb-2">{t('privacy.contacts_title')}</h2>
       <ul className="list-disc ml-6 mb-4">
-        <li>{t('privacy.email')}: <a href="mailto:info@mandova.lt" className="underline">info@mandova.lt</a></li>
+        <li>{t('privacy.email')}: <a href="mailto:info@mandova.lt" className="underline">info@norvex.lt</a></li>
         <li>{t('privacy.phone')}: (+370) 622 23642</li>
         <li>{t('privacy.address')}: J. Basanavičiaus g. 144a LT-76128 Šiauliai</li>
       </ul>
@@ -40,9 +40,7 @@ const PrivacyPolicy: React.FC = () => {
       <h2 className="text-2xl font-semibold mt-8 mb-2">{t('privacy.social_title')}</h2>
       <p>{t('privacy.social_intro')}</p>
       <ul className="list-disc ml-6 mb-4">
-        <li><a href="https://www.facebook.com/MBmandova" target="_blank" rel="noopener noreferrer" className="underline">Facebook</a></li>
-        <li><a href="https://www.instagram.com/mbmandova/" target="_blank" rel="noopener noreferrer" className="underline">Instagram</a></li>
-        <li><a href="https://www.tiktok.com/@mbmandova" target="_blank" rel="noopener noreferrer" className="underline">TikTok</a></li>
+        <li><a href="https://www.facebook.com/NorvexMB" target="_blank" rel="noopener noreferrer" className="underline">Facebook</a></li>
       </ul>
       <p>{t('privacy.social_details')}</p>
       <p>{t('privacy.social_joint')}</p>

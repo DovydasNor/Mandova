@@ -15,9 +15,9 @@ const Contacts: React.FC = () => {
   usePageMeta({
     title: 'Kontaktai - Susisiekite su Mandova metalo konstrukcijų specialistais',
     description: 'Susisiekite su Mandova metalo konstrukcijų ir suvirinimo specialistais. Kreipkitės dėl konsultacijų, pasiūlymų ar projektų aptarimo. Profesionalūs sprendimai jūsų poreikiams.',
-    keywords: 'Mandova kontaktai, metalo konstrukcijos kontaktai, suvirinimo paslaugos kontaktai, kreipkitės, konsultacijos',
-    canonical: 'https://mandova.lt/Contacts',
-    ogImage: 'https://mandova.lt/src/assets/partnership-handshake.webp',
+    keywords: 'Norvex kontaktai, metalo konstrukcijos kontaktai, suvirinimo paslaugos kontaktai, kreipkitės, konsultacijos',
+    canonical: 'https://norvex.lt/Contacts',
+    ogImage: 'https://norvex.lt/src/assets/partnership-handshake.webp',
     ogType: 'website'
   });
 
@@ -31,8 +31,8 @@ const Contacts: React.FC = () => {
   }, [location.state]);
 
   const breadcrumbItems = [
-    { name: 'Pagrindinis', url: 'https://mandova.lt/' },
-    { name: 'Kontaktai', url: 'https://mandova.lt/Contacts' }
+    { name: 'Pagrindinis', url: 'https://norvex.lt/' },
+    { name: 'Kontaktai', url: 'https://norvex.lt/Contacts' }
   ];
 
   return (
@@ -96,7 +96,7 @@ const Contacts: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-semibold text-texts mb-2">{t('contacts.email_title')}</h3>
-                <a href='mailto:info@mandova.lt' className="text-xl text-orange">info@mandova.lt</a>
+                <a href='mailto:info@mandova.lt' className="text-xl text-orange">info@norvex.lt</a>
                 <p className="text-base text-orange">{t('contacts.email_note')}</p>
               </div>
             </motion.div>

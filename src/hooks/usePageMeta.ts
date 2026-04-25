@@ -98,11 +98,11 @@ export const usePageMeta = ({
     updateOGMeta('og:description', description);
     updateOGMeta('og:type', ogType);
     updateOGMeta('og:url', canonical || window.location.href);
-    updateOGMeta('og:site_name', 'Mandova');
+    updateOGMeta('og:site_name', 'Norvex');
     updateOGMeta('og:locale', 'lt_LT');
     if (ogImage) {
       updateOGMeta('og:image', ogImage);
-      updateOGMeta('og:image:alt', `${title} - Mandova`);
+      updateOGMeta('og:image:alt', `${title} - Norvex`);
     }
 
     
