@@ -1,6 +1,6 @@
   
 {
-  "welcome_message": "Welcome to Mandova!",
+  "welcome_message": "Welcome to Norvex!",
   "services_title": "Our Services",
   "contact_us": "Contact Us",
   "header": {
@@ -14,7 +14,7 @@
   "hero": {
     "title": "Quality welding, impressive results",
     "subtitle": "Building a stronger future - project by project",
-    "image_alt": "Welding work at Mandova factory",
+    "image_alt": "Welding work at Norvex factory",
     "location": "Šiauliai, Lithuania"
   },
   "services": {
@@ -36,10 +36,10 @@
     "consultation": "Need individual consultations?"
   },
   "about": {
-    "title": "About Mandova",
+    "title": "About Norvex",
     "subtitle": "For over 2 years we have been providing professional welding and metal construction solutions",
     "professionalism_title": "Professionalism and reliability",
-    "professionalism_desc1": "Mandova is a reliable partner specializing in high-quality welding services and metal construction manufacturing. Our team has years of experience and uses the latest technologies.",
+    "professionalism_desc1": "Norvex is a reliable partner specializing in high-quality welding services and metal construction manufacturing. Our team has years of experience and uses the latest technologies.",
     "professionalism_desc2": "We work on a variety of projects – from small repairs to large industrial sites. Our goal is to provide clients with the best quality and reliability.",
     "experience": "2 years of experience",
     "experience_alt": "Experience",
@@ -69,7 +69,7 @@
     "links_title": "Links",
     "contacts_title": "Contacts",
     "address": "J. Basanavičiaus g. 144A Šiauliai, Lithuania",
-    "copyright": "© 2025 Mandova. All rights reserved.",
+    "copyright": "© 2025 Norvex. All rights reserved.",
     "privacy_policy": "Privacy Policy"
     },
     "contacts": {
@@ -105,7 +105,7 @@
 
   "privacy": {
     "title": "Privacy Policy",
-    "intro": "This Privacy Policy provides information on how the website https://www.mandova.lt administration (hereinafter - Data Controller) processes your personal data when you visit the website https://www.mandova.lt.",
+    "intro": "This Privacy Policy provides information on how the website https://www.Norvex.lt administration (hereinafter - Data Controller) processes your personal data when you visit the website https://www.Norvex.lt.",
     "contacts_title": "Data Controller Contacts",
     "email": "Email",
     "phone": "Phone",
@@ -132,7 +132,7 @@
     "rights_port": "Receive data in a structured, commonly used format ('data portability')",
     "rights_object": "Object to data processing (e.g., for marketing purposes)",
     "rights_withdraw": "Withdraw consent at any time",
-    "rights_how": "You can exercise these rights by contacting the Data Controller via email: info@mandova.lt",
+    "rights_how": "You can exercise these rights by contacting the Data Controller via email: info@Norvex.lt",
     "complaints_title": "Complaints",
     "complaints_intro": "If you believe that your rights as a data subject have been or may have been violated, we invite you to first contact us using the contacts provided in this Privacy Policy. Upon receiving your request or complaint, we will take action as soon as possible - we will review the situation and inform you about the progress and result of the review.",
     "complaints_next": "If our response does not satisfy you or you believe the issue has not been resolved properly, you have the right to submit a complaint to ",
@@ -141,7 +141,7 @@
     "final_details": "You are responsible for ensuring that the personal data you provide to us is accurate, current, and correct. If your data changes, please notify us by email without delay so that we can ensure proper processing. We are not responsible for any losses or inconveniences that may arise from providing incorrect, incomplete, or outdated information, or failing to notify us of changes.",
     "final_update": "We reserve the right to update or change this privacy policy at any time. Updates take effect from the date they are published on the website, unless otherwise stated.",
     "last_updated": "Last updated: 2025-08-19",
-    "copyright": "The content of this privacy policy is the intellectual property of dokumentai24.lt and is protected by copyright. Copying, distributing, or otherwise using the entire document or any part of it without written permission is prohibited. Usage rights granted to the website https://www.mandova.lt."
+    "copyright": "The content of this privacy policy is the intellectual property of dokumentai24.lt and is protected by copyright. Copying, distributing, or otherwise using the entire document or any part of it without written permission is prohibited. Usage rights granted to the website https://www.Norvex.lt."
   },
 
   "notfound": {
@@ -189,7 +189,7 @@
     },
     "benefits": {
       "title": "Partner Benefits",
-      "subtitle": "Advantages of choosing Mandova as your B2B partner",
+      "subtitle": "Advantages of choosing Norvex as your B2B partner",
       "cost": {
         "title": "Cost Efficiency",
         "description": "Competitive pricing with volume discounts for long-term partnerships"
@@ -209,7 +209,7 @@
     },
     "cta": {
       "title": "Ready to Partner with Us?",
-      "subtitle": "Join hundreds of satisfied business clients who trust Mandova for their metal construction needs",
+      "subtitle": "Join hundreds of satisfied business clients who trust Norvex for their metal construction needs",
       "contact_button": "Get Business Quote",
       "call_button": "Call Business Line"
     }

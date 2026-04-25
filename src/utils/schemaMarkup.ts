@@ -151,12 +151,12 @@ export const generateLocalBusinessSchema = (): object => {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Mandova",
-    "image": "https://mandova.lt/src/assets/welding-work-with-metal-construction-busy-metal-factory.webp",
+    "name": "Norvex",
+    "image": "https://norvex.lt/src/assets/welding-work-with-metal-construction-busy-metal-factory.webp",
     "description": "Profesionalūs suvirinimo darbai ir metalo konstrukcijos pagal užsakymą Lietuvoje.",
-    "url": "https://mandova.lt",
+    "url": "https://norvex.lt",
     "telephone": "+370-600-00000",
-    "email": "info@mandova.lt",
+    "email": "info@norvex.lt",
     "address": {
       "@type": "PostalAddress", 
       "addressCountry": "LT"
@@ -200,8 +200,8 @@ export const generateServiceSchema = (): object => {
     "name": "Metalo konstrukcijos ir suvirinimo paslaugos",
     "provider": {
       "@type": "Organization",
-      "name": "Mandova",
-      "url": "https://mandova.lt"
+      "name": "Norvex",
+      "url": "https://norvex.lt"
     },
     "description": "Profesionalūs suvirinimo darbai, metalo konstrukcijų gamyba ir montavimas. Kokybiškas metalo apdirbimas pagal individualius užsakymus.",
     "serviceType": "Construction Services",
@@ -211,7 +211,7 @@ export const generateServiceSchema = (): object => {
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Mandova paslaugos",
+      "name": "Norvex paslaugos",
       "itemListElement": [
         {
           "@type": "Offer",
@@ -256,13 +256,13 @@ export const generateImageGallerySchema = (images: GalleryImage[]): object => {
     "@type": "ImageGallery",
     "name": "Mandova metalo konstrukcijų galerija",
     "description": "Mandova atliktų suvirinimo darbų ir metalo konstrukcijų projektų galerija",
-    "url": "https://mandova.lt/Gallery",
+    "url": "https://norvex.lt/Gallery",
     "associatedMedia": images.map((image: GalleryImage) => ({
       "@type": "ImageObject",
-      "url": `https://mandova.lt/src/assets/Gallery/${image.filename}`,
+      "url": `https://norvex.lt/src/assets/Gallery/${image.filename}`,
       "name": image.name,
       "description": image.description,
-      "contentUrl": `https://mandova.lt/src/assets/Gallery/${image.filename}`,
+      "contentUrl": `https://norvex.lt/src/assets/Gallery/${image.filename}`,
       "width": "800",
       "height": "600",
       "encodingFormat": "image/webp"

@@ -1,6 +1,6 @@
 
 {
-  "welcome_message": "Sveiki atvykę į Mandova!",
+  "welcome_message": "Sveiki atvykę į Norvex!",
   "services_title": "Mūsų Paslaugos",
   "contact_us": "Susisiekite su mumis",
   "header": {
@@ -14,7 +14,7 @@
   "hero": {
     "title": "Kokybiškas suvirinimas, džiuginantys rezultatai",
     "subtitle": "Statome tvirtesnę ateitį - vienas projektas po kito",
-    "image_alt": "Suvirinimo darbai Mandova gamykloje",
+    "image_alt": "Suvirinimo darbai Norvex gamykloje",
     "location": "Šiauliai, Lietuva"
   },
   "services": {
@@ -36,10 +36,10 @@
     "consultation": "Reikalinga individuali konsultacija ?"
   },
   "about": {
-    "title": "Apie Mandova",
+    "title": "Apie Norvex",
     "subtitle": "Jau daugiau nei 2 metus teikiame profesionalius suvirinimo ir metalo konstrukcijų gamybos sprendimus",
     "professionalism_title": "Profesionalumas ir patikimumas",
-    "professionalism_desc1": "Mandova - tai patikimas partneris, kuris specializuojasi aukštos kokybės suvirinimo paslaugose ir metalo konstrukcijų gamyboje. Mūsų komanda turi ilgametę patirtį ir naudoja pažangiausias technologijas.",
+    "professionalism_desc1": "Norvex - tai patikimas partneris, kuris specializuojasi aukštos kokybės suvirinimo paslaugose ir metalo konstrukcijų gamyboje. Mūsų komanda turi ilgametę patirtį ir naudoja pažangiausias technologijas.",
     "professionalism_desc2": "Mes dirbame su įvairiausiais projektais - nuo smulkių remonto darbų iki didelių pramonės objektų. Mūsų tikslas - suteikti klientams geriausią kokybę ir patikimumą.",
     "experience": "2 metų patirtis",
     "experience_alt": "Patirtis",
@@ -69,7 +69,7 @@
     "links_title": "Nuorodos",
     "contacts_title": "Kontaktai",
     "address": "J. Basanavičiaus g. 144A Šiauliai, Lietuva",
-    "copyright": "© 2026 Mandova. Visos teisės saugomos.",
+    "copyright": "© 2026 Norvex. Visos teisės saugomos.",
     "privacy_policy": "Privatumo politika"
   },
 
@@ -105,7 +105,7 @@
 
   "privacy": {
     "title": "Privatumo politika",
-    "intro": "Šioje privatumo politikoje (toliau - Privatumo politika) Jums pateikiame informaciją, kaip svetainės https://www.mandova.lt administracija (toliau - Duomenų valdytojas) tvarko Jūsų asmens duomenis, kai lankotės svetainėje https://www.mandova.lt.",
+    "intro": "Šioje privatumo politikoje (toliau - Privatumo politika) Jums pateikiame informaciją, kaip svetainės https://www.norvex.lt administracija (toliau - Duomenų valdytojas) tvarko Jūsų asmens duomenis, kai lankotės svetainėje https://www.norvex.lt.",
     "contacts_title": "Duomenų valdytojo kontaktai",
     "email": "El. paštas",
     "phone": "Telefonas",
@@ -132,7 +132,7 @@
     "rights_port": "Gauti duomenis struktūrizuotu, dažnai naudojamu formatu („duomenų perkeliamumas“)",
     "rights_object": "Nesutikti su duomenų tvarkymu (pvz., rinkodaros tikslais)",
     "rights_withdraw": "Atšaukti sutikimą bet kuriuo metu",
-    "rights_how": "Šiomis teisėmis galite pasinaudoti kreipdamiesi į duomenų valdytoją el. paštu: info@mandova.lt",
+    "rights_how": "Šiomis teisėmis galite pasinaudoti kreipdamiesi į duomenų valdytoją el. paštu: info@Norvex.lt",
     "complaints_title": "Skundai",
     "complaints_intro": "Jei manote, kad Jūsų, kaip duomenų subjekto, teisės buvo ar galėjo būti pažeistos, kviečiame pirmiausia kreiptis į mus šioje Privatumo politikoje nurodytais kontaktais. Gavę Jūsų užklausą ar skundą, imsimės veiksmų kuo greičiau - išnagrinėsime situaciją ir informuosime Jus apie nagrinėjimo eigą bei rezultatą.",
     "complaints_next": "Jei mūsų atsakymas Jūsų netenkins arba manysite, kad klausimas neišspręstas tinkamai, turite teisę pateikti skundą ",
@@ -141,7 +141,7 @@
     "final_details": "Jūs atsakote už tai, kad mums pateikti asmens duomenys būtų tikslūs, aktualūs ir teisingi. Jei Jūsų duomenys pasikeičia, prašome nedelsti ir informuoti mus el. paštu, kad galėtume užtikrinti tinkamą jų tvarkymą. Mes neatsakome už galimus nuostolius ar nepatogumus, kurie gali kilti dėl to, kad pateikėte neteisingą, neišsamią ar pasenusią informaciją, arba nepranešėte apie jos pasikeitimus.",
     "final_update": "Mes pasiliekame teisę bet kada atnaujinti ar pakeisti šią privatumo politiką. Atnaujinimai įsigalioja nuo jų paskelbimo svetainėje dienos, nebent nurodyta kitaip.",
     "last_updated": "Paskutinį kartą atnaujinta: 2025-08-19",
-    "copyright": "Šios privatumo politikos turinys yra „dokumentai24.lt“ intelektinė nuosavybė ir saugomas autorių teisių. Be raštiško sutikimo draudžiama kopijuoti, platinti ar kitaip naudoti visą dokumentą ar jo dalis. Naudojimo teisė suteikta svetainei https://www.mandova.lt."
+    "copyright": "Šios privatumo politikos turinys yra „dokumentai24.lt“ intelektinė nuosavybė ir saugomas autorių teisių. Be raštiško sutikimo draudžiama kopijuoti, platinti ar kitaip naudoti visą dokumentą ar jo dalis. Naudojimo teisė suteikta svetainei https://www.norvex.lt."
   },
 
   "notfound": {
@@ -189,7 +189,7 @@
     },
     "benefits": {
       "title": "Partnerių privalumai",
-      "subtitle": "Mandova pasirinkimo kaip B2B partnerio pranašumai",
+      "subtitle": "Norvex pasirinkimo kaip B2B partnerio pranašumai",
       "cost": {
         "title": "Kaštų efektyvumas",
         "description": "Konkurencingi kainos su nuolaidomis už kiekį ilgalaikėms partnerystėms"
@@ -209,7 +209,7 @@
     },
     "cta": {
       "title": "Pasiruošę bendradarbiauti su mumis?",
-      "subtitle": "Prisijunkite prie šimtų patenkinančių verslo klientų, kurie pasitiki Mandova metalo konstrukcijų poreikiais",
+      "subtitle": "Prisijunkite prie šimtų patenkinančių verslo klientų, kurie pasitiki Norvex metalo konstrukcijų poreikiais",
       "contact_button": "Gauti verslo pasiūlymą",
       "call_button": "Skambinti verslo linijai"
     }
