@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
           transition={{ delay: 1 }}
         >
           {[
-            { icon: Award, value: "2+", label: t('about.years_experience') },
+            { icon: Award, value: "6+", label: t('about.years_experience') },
             { icon: Shield, value: "100%", label: t('about.quality') },
           ].map((stat, i) => (
             <motion.div
