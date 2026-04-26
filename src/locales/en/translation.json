@@ -12,7 +12,7 @@
     "home": "Home"
   },
   "hero": {
-    "title": "Quality welding, impressive results",
+    "title": "High-quality work, delivering satisfying results",
     "subtitle": "Building a stronger future - project by project",
     "image_alt": "Welding work at Norvex factory",
     "location": "Šiauliai, Lithuania"
@@ -20,14 +20,14 @@
   "services": {
     "lines_alt": "Decorative lines",
     "title": "Our Services",
-    "subtitle": "Professional welding solutions for all your needs",
+    "subtitle": "Professional aluminum processing solutions for all your needs",
     "card1": {
-      "title": "Metal constructions",
-      "desc": "Manufacturing of strong and reliable metal constructions according to individual projects"
+      "title": "Aluminium constructions",
+      "desc": "Manufacturing and repair of strong, reliable aluminum structures tailored to individual projects"
     },
     "card2": {
-      "title": "Repair works",
-      "desc": "We provide fast, high-quality repair and restoration of metal products"
+      "title": "Cutting of round and profile tubes using a band saw",
+      "desc": "Fast and precise cutting"
     },
     "card3": {
       "title": "Welding services",
@@ -37,11 +37,11 @@
   },
   "about": {
     "title": "About Norvex",
-    "subtitle": "For over 2 years we have been providing professional welding and metal construction solutions",
+    "subtitle": "For over 6 years we have been providing professional welding and metal construction solutions",
     "professionalism_title": "Professionalism and reliability",
-    "professionalism_desc1": "Norvex is a reliable partner specializing in high-quality welding services and metal construction manufacturing. Our team has years of experience and uses the latest technologies.",
+    "professionalism_desc1": "Norvex is a reliable partner for your business, specializing in high-quality welding services and the fabrication of aluminum structures. Our team has many years of experience and uses the most advanced technologies.",
     "professionalism_desc2": "We work on a variety of projects – from small repairs to large industrial sites. Our goal is to provide clients with the best quality and reliability.",
-    "experience": "2 years of experience",
+    "experience": "6 years of experience",
     "experience_alt": "Experience",
     "certificate": "Certified specialists",
     "certificate_alt": "Certificate",
