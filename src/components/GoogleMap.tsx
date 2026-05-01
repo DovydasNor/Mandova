@@ -18,14 +18,14 @@ const GoogleMap = () => {
         variants={fadeInDown}
       >
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2233.331514106501!2d23.317763076789312!3d55.96095747316198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e5e384182afc51%3A0xbdeee0bfb4ba6928!2sMandova!5e0!3m2!1slt!2slt!4v1754823334594!5m2!1slt!2slt"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d272.00302383023114!2d23.310756012345607!3d55.95152889512082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x282b942812e27c4d%3A0x441b95e5a00d1a4a!2sNorvex!5e1!3m2!1slt!2slt!4v1777624333746!5m2!1slt!2slt"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           allowFullScreen={true}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Mandova Location"
+          title="Norvex Location"
         ></iframe>
       </motion.div>
   )
