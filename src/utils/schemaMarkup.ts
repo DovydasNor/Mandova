@@ -46,13 +46,13 @@ export const generateBusinessSchema = (): BusinessSchema => {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Mandova",
-    "alternateName": "Mandova metalo konstrukcijos",
-    "description": "Profesionalūs suvirinimo darbai ir metalo konstrukcijos pagal užsakymą. Kokybiškas metalo apdirbimas, konstrukcijų gamyba ir montavimas Lietuvoje.",
-    "url": "https://mandova.lt",
-    "logo": "https://mandova.lt/src/assets/Mandova_logo_trans.webp",
-    "image": "https://mandova.lt/src/assets/welding-work-with-metal-construction-busy-metal-factory.webp",
-    "foundingDate": "2020",
+    "name": "Norvex",
+    "alternateName": "Norvex aliuminio konstrukcijos",
+    "description": "Norvex – profesionalūs aliuminio apdirbimo darbai, konstrukcijos pagal užsakymą. Kokybė, tikslumas ir patikimumas. Susisiekite.",
+    "url": "https://norvex.lt",
+    "logo": "https://norvex.lt/src/assets/VerticalWhite.png",
+    "image": "https://norvex.lt/src/assets/welding-work-with-metal-construction-busy-metal-factory.webp",
+    "foundingDate": "2025",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "LT",
@@ -60,18 +60,18 @@ export const generateBusinessSchema = (): BusinessSchema => {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+370-600-00000",
-      "email": "info@mandova.lt",
+      "telephone": "+370-622-23642",
+      "email": "info@norvex.lt",
       "contactType": "Customer Service",
       "availableLanguage": ["Lithuanian", "English"]
     },
     "sameAs": [
-      "https://facebook.com/mandova",
-      "https://instagram.com/mandova"
+      "https://facebook.com/",
+      "https://instagram.com/"
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Mandova Services",
+      "name": "Norvex Services",
       "itemListElement": [
         {
           "@type": "Offer",
@@ -110,25 +110,25 @@ export const generateWebsiteSchema = (): object => {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Mandova",
-    "alternateName": "Mandova metalo konstrukcijos",
-    "url": "https://mandova.lt",
-    "description": "Profesionalūs suvirinimo darbai ir metalo konstrukcijos. Kokybė, tikslumas ir patikimumas.",
+    "name": "Norvex",
+    "alternateName": "Norvex aliuminio konstrukcijos",
+    "url": "https://norvex.lt",
+    "description": "Norvex – profesionalūs aliuminio apdirbimo darbai, konstrukcijos pagal užsakymą. Kokybė, tikslumas ir patikimumas. Susisiekite.",
     "inLanguage": "lt-LT",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://mandova.lt/?s={search_term_string}"
+        "urlTemplate": "https://norvex.lt/?s={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Mandova",
+      "name": "Norvex",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://mandova.lt/src/assets/Mandova_logo_trans.webp"
+        "url": "https://norvex.lt/src/assets/VerticalWhite.png"
       }
     }
   };
