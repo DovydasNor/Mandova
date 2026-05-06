@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
           viewport={viewportScrollDown}
           variants={staggerContainer}
         >
-          <motion.div className="lg:col-span-2" variants={staggerItem}>
+          <motion.div className="lg:col-span-2 ml-1.5" variants={staggerItem}>
             <motion.img 
               src={mandovaLogo} 
               alt="Mandova Logo" 
