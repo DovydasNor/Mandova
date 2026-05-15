@@ -13,11 +13,11 @@ const Contacts: React.FC = () => {
   const { t, i18n } = useTranslation();
 
   usePageMeta({
-    title: 'Kontaktai - Susisiekite su Mandova metalo konstrukcijų specialistais',
-    description: 'Susisiekite su Mandova metalo konstrukcijų ir suvirinimo specialistais. Kreipkitės dėl konsultacijų, pasiūlymų ar projektų aptarimo. Profesionalūs sprendimai jūsų poreikiams.',
-    keywords: 'Norvex kontaktai, metalo konstrukcijos kontaktai, suvirinimo paslaugos kontaktai, kreipkitės, konsultacijos',
+    title: 'Kontaktai - Susisiekite su Norvex specialistais',
+    description: 'Susisiekite su Norvex specialistais. Kreipkitės dėl konsultacijų, pasiūlymų ar projektų aptarimo. Profesionalūs sprendimai jūsų poreikiams.',
+    keywords: 'Norvex kontaktai, aliuminio konstrukcijos kontaktai, suvirinimo paslaugos kontaktai, kreipkitės, konsultacijos',
     canonical: 'https://norvex.lt/Contacts',
-    ogImage: 'https://norvex.lt/src/assets/partnership-handshake.webp',
+    ogImage: 'https://norvex.lt/src/assets/verticalWhite.png',
     ogType: 'website'
   });
 

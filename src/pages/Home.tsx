@@ -13,9 +13,9 @@ const Home: React.FC = () => {
   const { i18n } = useTranslation();
   
   usePageMeta({
-    title: 'Norvex - Metalo konstrukcijos ir suvirinimo paslaugos Lietuvoje',
-    description: 'Norvex – profesionalūs suvirinimo darbai, metalo konstrukcijos pagal užsakymą. Kokybiškas metalo apdirbimas, konstrukcijų gamyba ir montavimas. Susisiekite su mumis jau šiandien.',
-    keywords: 'suvirinimo darbai, metalo konstrukcijos, metalo apdirbimas, suvirinimas, konstrukcijų gamyba, norvex, Lietuva',
+    title: 'Norvex - Aliuminio konstrukcijos ir suvirinimo paslaugos Lietuvoje',
+    description: 'Norvex – profesionalūs suvirinimo darbai, aliuminio konstrukcijos pagal užsakymą. Kokybiškas metalo apdirbimas, aliuminio konstrukcijų gamyba. Susisiekite su mumis jau šiandien.',
+    keywords: 'suvirinimo darbai, aliuminio konstrukcijos, aliuminio apdirbimas, suvirinimas, konstrukcijų gamyba, Norvex, Lietuva',
     canonical: 'https://norvex.lt/',
     ogImage: 'https://norvex.lt/src/assets/welding-work-with-metal-construction-busy-metal-factory.webp',
     ogType: 'website'
